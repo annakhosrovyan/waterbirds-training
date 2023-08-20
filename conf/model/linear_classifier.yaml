@@ -1,0 +1,7 @@
+name: LinearClassifier 
+
+params:
+  num_classes: 2
+  batch_size: 64
+  num_epochs: 60
+  learning_rate: 0.001

@@ -1,0 +1,8 @@
+name: cnn 
+
+params:
+  num_classes: 2
+  batch_size: 16
+  num_epochs: 5
+  in_channel: 3
+  learning_rate: 0.001

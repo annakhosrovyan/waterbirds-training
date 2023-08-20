@@ -1,0 +1,23 @@
+model:
+  name: cnn
+  params:
+    num_classes: 2
+    batch_size: 16
+    num_epochs: 5
+    in_channel: 3
+    learning_rate: 0.001
+dataset:
+  name: waterbirds_images
+
+Checking accuracy on Training Set
+Got 4778 / 4795 with accuracy 99.65
+Checking accuracy on Test Set
+Got 3639 / 5794 with accuracy 62.81
+Accuracy on waterbird_water
+Got 423 / 642 with accuracy 65.89
+Accuracy on waterbird_land
+Got 30 / 642 with accuracy 4.67
+Accuracy on landbird_land
+Got 2181 / 2255 with accuracy 96.72
+Accuracy on landbird_water
+Got 1006 / 2255 with accuracy 44.61

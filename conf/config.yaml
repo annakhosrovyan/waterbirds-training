@@ -1,0 +1,5 @@
+defaults:
+  - model: cnn
+  - dataset: waterbirds_images
+  - optional dataset_model: ${dataset}_${model}
+  - override hydra/job_logging: custom

@@ -1,0 +1,5 @@
+name: resnet50_representation
+
+paths:
+  train_path: "C:/Users/User/Desktop/MyProjects/waterbirds_simple_training/resnet50/train.npz"
+  test_path: "C:/Users/User/Desktop/MyProjects/waterbirds_simple_training/resnet50/test.npz"

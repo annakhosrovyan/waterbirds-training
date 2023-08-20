@@ -1,0 +1,25 @@
+model:
+  name: LinearClassifier
+  params:
+    num_classes: 2
+    batch_size: 64
+    num_epochs: 60
+    learning_rate: 0.001
+dataset:
+  name: resnet50_representation
+  paths:
+    train_path: C:/Users/User/Desktop/MyProjects/waterbirds_simple_training/resnet50/train.npz
+    test_path: C:/Users/User/Desktop/MyProjects/waterbirds_simple_training/resnet50/test.npz
+
+Checking accuracy on Training Set
+Got 4775 / 4795 with accuracy 99.58
+Checking accuracy on Test Set
+Got 5005 / 5794 with accuracy 86.38
+Accuracy on waterbird_water
+Got 603 / 642 with accuracy 93.93
+Accuracy on waterbird_land
+Got 412 / 642 with accuracy 64.17
+Accuracy on landbird_land
+Got 2237 / 2255 with accuracy 99.20
+Accuracy on landbird_water
+Got 1753 / 2255 with accuracy 77.74

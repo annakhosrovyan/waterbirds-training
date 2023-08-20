@@ -36,32 +36,32 @@ In this project, we discuss and evaluate the following combinations:
 
 ## Waterbirds Images Dataset with CNN Model
 
--  Training Set Accuracy**: 99.65%
--  Test Set Accuracy**: 62.81%
+-  Training Set Accuracy: 99.65%
+-  Test Set Accuracy: 62.81%
 ### Group-based Accuracy
--  Accuracy on waterbirds with water background**: 65.89%
--  Accuracy on waterbirds with land background**: 4.67%
--  Accuracy on landbirds with land background**: 96.72%
--  Accuracy on landbirds with water background**: 44.61%
+-  Accuracy on waterbirds with water background: 65.89%
+-  Accuracy on waterbirds with land background: 4.67%
+-  Accuracy on landbirds with land background: 96.72%
+-  Accuracy on landbirds with water background: 44.61%
 
 
 ## Waterbirds Images Dataset with ResNet50 Model
 
--  Training Set Accuracy**: 99.62%
--  Test Set Accuracy**: 66.86%
+-  Training Set Accuracy: 99.62%
+-  Test Set Accuracy: 66.86%
 ### Group-based Accuracy
--  Accuracy on waterbirds with water background**: 59.03%
--  Accuracy on waterbirds with land background**: 2.18%
--  Accuracy on landbirds with land background**: 98.00%
--  Accuracy on landbirds with water background**: 56.36%
+-  Accuracy on waterbirds with water background: 59.03%
+-  Accuracy on waterbirds with land background: 2.18%
+-  Accuracy on landbirds with land background: 98.00%
+-  Accuracy on landbirds with water background: 56.36%
 
 
 ## ResNet50 Representation Dataset with LinearClassifier Model
 
--  Training Set Accuracy**: 99.58%
--  Test Set Accuracy**: 86.38%
+-  Training Set Accuracy: 99.58%
+-  Test Set Accuracy: 86.38%
 ### Group-based Accuracy
--  Accuracy on waterbirds with water background**: 93.93%
--  Accuracy on waterbirds with land background**: 64.17%
--  Accuracy on landbirds with land background**: 99.20%
--  Accuracy on landbirds with water background**: 77.74%
+-  Accuracy on waterbirds with water background: 93.93%
+-  Accuracy on waterbirds with land background: 64.17%
+-  Accuracy on landbirds with land background: 99.20%
+-  Accuracy on landbirds with water background: 77.74%

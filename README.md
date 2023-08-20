@@ -8,9 +8,9 @@ This project aims to perform classification tasks using two distinct datasets an
 
 The primary goals of this project are as follows:
 
-- ** Classification: Perform classification tasks using the given datasets and models.
-- ** Performance Evaluation: Measure the accuracy of the classification models on both the training and test sets.
-- ** Group Accuracy: Evaluate the accuracy of the models on four specific groups formed by the background spurious attribute and bird type label.
+-  Classification: Perform classification tasks using the given datasets and models.
+-  Performance Evaluation: Measure the accuracy of the classification models on both the training and test sets.
+-  Group Accuracy: Evaluate the accuracy of the models on four specific groups formed by the background spurious attribute and bird type label.
 
 
 ## Datasets

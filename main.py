@@ -33,7 +33,6 @@ def main(cfg):
       algorithm_name = cfg.algorithm.name
       model_name = cfg.model.name
       dataset_name = cfg.dataset.name
-      optim_name = cfg.optimizer.name
 
 
 # --------------------Raise NotImplementedError for unsupported algorithm-dataset-model scenarios--------------------
@@ -51,9 +50,9 @@ def main(cfg):
                   raise NotImplementedError
 
 
-# --------------------Initialize the loss function (cross-entropy)--------------------
+# -----------------------Initialize the loss function-----------------------
 
-      criterion = instantiate(cfg.loss_function)
+      criterion = instantiate(cfg.loss.loss_function)
 
 
 # --------------------Load data based on the selected dataset--------------------
@@ -63,6 +62,7 @@ def main(cfg):
             test_dataset = get_test_data()
             train_loader, test_loader = load_waterbirds_images_data(cfg.model.params.batch_size)
             show_image(train_dataset)
+            
       elif dataset_name == "resnet50_representation":
             train_path = cfg.dataset.paths.train_path
             test_path = cfg.dataset.paths.test_path
@@ -85,15 +85,9 @@ def main(cfg):
             raise NotImplementedError
       
 
-# --------------------Initialize the optimizer based on 'optim_name'--------------------
+# -----------------------Initialize the optimizer-----------------------
 
-      if optim_name == "adam":
-            optimizer = optim.Adam(model.parameters(), lr = cfg.optimizer.params.lr, weight_decay = cfg.optimizer.params.weight_decay)
-      elif optim_name == "sgd":
-            optimizer = optim.SGD(model.parameters(), lr = cfg.optimizer.params.lr, 
-                              momentum =cfg.optimizer.params.momentum,  weight_decay = cfg.optimizer.params.weight_decay)
-      else: 
-            raise NotImplementedError
+      optimizer = instantiate(cfg.optimizer.optim, params = model.parameters())
       
 
 # --------------------Train the model and evaluate its performance--------------------

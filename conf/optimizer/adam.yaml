@@ -1,5 +1,6 @@
 name: adam 
 
-params:
+optim:
+  _target_: torch.optim.Adam
   lr: 0.001
-  weight_decay: 1e-5
+  weight_decay: 0.1

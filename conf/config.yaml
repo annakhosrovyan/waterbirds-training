@@ -1,10 +1,8 @@
 defaults:
-  - algorithm: standard_training
-  - model: cnn
-  - dataset: waterbirds_images
+  - algorithm: jtt
+  
+  - model: linear_classifier
+  - dataset: resnet50_representation
   - optimizer: sgd
-  - optional dataset_model: ${algorithm}_${dataset}_${model}_${optimizer}
+  - loss: cross_entropy
   - override hydra/job_logging: custom  
-
-loss_function:
-  _target_: torch.nn.CrossEntropyLoss

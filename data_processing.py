@@ -10,12 +10,9 @@ from wilds.common.data_loaders import get_train_loader
 from wilds.common.data_loaders import get_eval_loader
 
 
-#       ####################################
-
-#       Waterbirds Images Dataset Processing
-
-#       ####################################
-
+#       ------------------------------------------------------------------------------------------------------------
+#       -------------------------------Waterbirds Image Dataset Loading and Processing------------------------------
+#       ------------------------------------------------------------------------------------------------------------
 
 def get_waterbirds_dataset():
     dataset = get_dataset(root_dir = "C:/Users/User/Desktop/MyProjects/waterbirds_training/data", 
@@ -58,13 +55,9 @@ def load_waterbirds_images_data(batch_size):
     return train_loader, test_loader
 
 
-
-#       ###########################################
-
-#       ResNet50 Representation Dataset Processing
-
-#       ###########################################
-
+#       ------------------------------------------------------------------------------------------------------------
+#       -----------------------------ResNet50 Representation Data Loading and Processing----------------------------
+#       ------------------------------------------------------------------------------------------------------------
 
 class EncodingDataset(Dataset):
     def __init__(self, x, y, c):
@@ -86,20 +79,16 @@ def get_data(train_path):
     return x.squeeze(), y.squeeze(), c.squeeze()
     
 
-def load_resnet50_representation_data(train_path, test_path, batch_size):
+def load_resnet50_representation_data(train_path, test_path, val_path, batch_size):
     train_x, train_y, train_c = get_data(train_path)
     test_x, test_y, test_c  = get_data(test_path)
+    val_x, val_y, val_c  = get_data(val_path)
 
     train_dataset = EncodingDataset(train_x, train_y, train_c)
     test_dataset = EncodingDataset(test_x, test_y, test_c)
+    val_dataset = EncodingDataset(val_x, val_y, val_c)
 
     train_loader = DataLoader(train_dataset, batch_size, shuffle = True)
     test_loader = DataLoader(test_dataset, batch_size, shuffle = False)
 
-    return train_loader, test_loader,  train_dataset, test_dataset
-
-
-
-
-
-
+    return train_loader, test_loader,  train_dataset, test_dataset, val_dataset

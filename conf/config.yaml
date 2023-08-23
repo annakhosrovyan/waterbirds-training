@@ -1,5 +1,10 @@
 defaults:
+  - algorithm: standard_training
   - model: cnn
   - dataset: waterbirds_images
-  - optional dataset_model: ${dataset}_${model}
-  - override hydra/job_logging: custom
+  - optimizer: sgd
+  - optional dataset_model: ${algorithm}_${dataset}_${model}_${optimizer}
+  - override hydra/job_logging: custom  
+
+loss_function:
+  _target_: torch.nn.CrossEntropyLoss

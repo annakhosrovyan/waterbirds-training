@@ -6,7 +6,7 @@ handlers:
     formatter: simple
   file:
     class: logging.FileHandler
-    filename: main.log
+    filename: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}/main.log
     formatter: simple
 
 root:

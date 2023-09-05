@@ -1,41 +1,5 @@
 ## resnet50_representation
 
-algorithm:
-  name: jtt
-  params:
-    lambda_up: 100
-    num_epochs_for_final_model: 300
-  data_format:
-  - vector
-model:
-  name: linear_classifier
-  linear_config:
-    _target_: models.LinearClassifier
-  params:
-    num_classes: 2
-    batch_size: 64
-    num_epochs: 60
-  data_format:
-  - vector
-dataset:
-  name: resnet50_representation
-  in_features: 2048
-  paths:
-    train_path: C:/Users/User/Desktop/Datasets/resnet50/train.npz
-    test_path: C:/Users/User/Desktop/Datasets/resnet50/test.npz
-    val_path: C:/Users/User/Desktop/Datasets/resnet50/val.npz
-  data_format:
-  - vector
-optimizer:
-  name: adam
-  optim:
-    _target_: torch.optim.Adam
-    lr: 0.01
-    weight_decay: 1.0e-05
-loss:
-  name: cross_entropy
-  loss_function:
-    _target_: torch.nn.CrossEntropyLoss
 
 Evaluate standard model performance
 
@@ -52,16 +16,6 @@ Got 2236 / 2255 with accuracy 99.16
 Accuracy on landbird_water
 Got 1750 / 2255 with accuracy 77.61
 
-Validation Group Accuracies
-
-Accuracy on waterbird_water
-Got 127 / 133 with accuracy 95.49
-Accuracy on waterbird_land
-Got 83 / 133 with accuracy 62.41
-Accuracy on landbird_land
-Got 460 / 467 with accuracy 98.50
-Accuracy on landbird_water
-Got 325 / 466 with accuracy 69.74
 
 Evaluate JTT performance
 
@@ -81,43 +35,6 @@ Got 1664 / 2255 with accuracy 73.79
 
 ## dino_v2_representation
 
-algorithm:
-  name: jtt
-  params:
-    lambda_up: 700
-    num_epochs_for_final_model: 300
-  data_format:
-  - vector
-model:
-  name: linear_classifier
-  linear_config:
-    _target_: models.LinearClassifier
-  params:
-    num_classes: 2
-    batch_size: 64
-    num_epochs: 60
-  data_format:
-  - vector
-dataset:
-  name: dino_v2_representation
-  in_features: 768
-  paths:
-    train_path: C:/Users/User/Desktop/Datasets/dino_v2/train.npz
-    test_path: C:/Users/User/Desktop/Datasets/dino_v2/test.npz
-    val_path: C:/Users/User/Desktop/Datasets/dino_v2/val.npz
-  data_format:
-  - vector
-optimizer:
-  name: sgd
-  optim:
-    _target_: torch.optim.SGD
-    lr: 0.01
-    momentum: 0.9
-    weight_decay: 1
-loss:
-  name: cross_entropy
-  loss_function:
-    _target_: torch.nn.CrossEntropyLoss
 
 Evaluate standard model performance
 
@@ -134,16 +51,6 @@ Got 2253 / 2255 with accuracy 99.91
 Accuracy on landbird_water
 Got 2164 / 2255 with accuracy 95.96
 
-Validation Group Accuracies
-
-Accuracy on waterbird_water
-Got 132 / 133 with accuracy 99.25
-Accuracy on waterbird_land
-Got 125 / 133 with accuracy 93.98
-Accuracy on landbird_land
-Got 444 / 467 with accuracy 95.07
-Accuracy on landbird_water
-Got 365 / 466 with accuracy 78.33
 
 Evaluate JTT performance
 
@@ -163,43 +70,6 @@ Got 1810 / 2255 with accuracy 80.27
 
 ## regnet_representation
 
-algorithm:
-  name: jtt
-  params:
-    lambda_up: 20
-    num_epochs_for_final_model: 250
-  data_format:
-  - vector
-model:
-  name: linear_classifier
-  linear_config:
-    _target_: models.LinearClassifier
-  params:
-    num_classes: 2
-    batch_size: 64
-    num_epochs: 60
-  data_format:
-  - vector
-dataset:
-  name: regnet_representation
-  in_features: 7392
-  paths:
-    train_path: C:/Users/User/Desktop/Datasets/swag_pretrained_regnety_128gf_in1k/train.npz
-    test_path: C:/Users/User/Desktop/Datasets/swag_pretrained_regnety_128gf_in1k/test.npz
-    val_path: C:/Users/User/Desktop/Datasets/swag_pretrained_regnety_128gf_in1k/val.npz
-  data_format:
-  - vector
-optimizer:
-  name: adam
-  optim:
-    _target_: torch.optim.Adam
-    lr: 0.001
-    weight_decay: 1
-loss:
-  name: cross_entropy
-  loss_function:
-    _target_: torch.nn.CrossEntropyLoss
-
 Evaluate standard model performance
 
 Checking accuracy on Training Set
@@ -215,16 +85,6 @@ Got 2255 / 2255 with accuracy 100.00
 Accuracy on landbird_water
 Got 2096 / 2255 with accuracy 92.95
 
-Validation Group Accuracies
-
-Accuracy on waterbird_water
-Got 129 / 133 with accuracy 96.99
-Accuracy on waterbird_land
-Got 108 / 133 with accuracy 81.20
-Accuracy on landbird_land
-Got 467 / 467 with accuracy 100.00
-Accuracy on landbird_water
-Got 406 / 466 with accuracy 87.12
 
 Evaluate JTT performance
 

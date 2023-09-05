@@ -2,8 +2,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
+
 class CNN(nn.Module):
-    def __init__(self, in_channels = 3, num_output = 2):
+    def __init__(self, in_channels, num_classes):
         super(CNN, self).__init__()
         self.conv1 = nn.Conv2d(in_channels = 3, out_channels = 8, kernel_size = 3, stride = 1, padding = 1)
         self.pool = nn.MaxPool2d(kernel_size = (2, 2), stride = (2, 2))
@@ -21,9 +22,9 @@ class CNN(nn.Module):
   
 
 class LinearClassifier(nn.Module):
-    def __init__(self, in_features = 2048, out_features = 2):
+    def __init__(self, in_features, num_classes):
         super(LinearClassifier, self).__init__()
-        self.fc = nn.Linear(in_features, out_features)
+        self.fc = nn.Linear(in_features, num_classes)
 
     def forward(self, x):
         x = self.fc(x)

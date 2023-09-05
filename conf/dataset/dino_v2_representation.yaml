@@ -1,0 +1,12 @@
+name: dino_v2_representation
+in_features: 768
+
+paths:
+  train_path: "C:/Users/User/Desktop/Datasets/dino_v2/train.npz"
+  test_path: "C:/Users/User/Desktop/Datasets/dino_v2/test.npz"
+  val_path: "C:/Users/User/Desktop/Datasets/dino_v2/val.npz"
+
+data_format:
+  - vector
+
+  

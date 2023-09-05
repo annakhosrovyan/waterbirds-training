@@ -1,0 +1,10 @@
+name: regnet_representation
+in_features: 7392
+
+paths:
+  train_path: "C:/Users/User/Desktop/Datasets/swag_pretrained_regnety_128gf_in1k/train.npz"
+  test_path: "C:/Users/User/Desktop/Datasets/swag_pretrained_regnety_128gf_in1k/test.npz"
+  val_path: "C:/Users/User/Desktop/Datasets/swag_pretrained_regnety_128gf_in1k/val.npz"
+
+data_format:
+  - vector

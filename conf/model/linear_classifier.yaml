@@ -1,6 +1,12 @@
 name: linear_classifier 
 
+linear_config:
+  _target_: models.LinearClassifier
+
 params:
   num_classes: 2
   batch_size: 64
   num_epochs: 60
+
+data_format:
+  - vector

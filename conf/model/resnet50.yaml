@@ -8,3 +8,6 @@ params:
   num_classes: 2
   batch_size: 2
   num_epochs: 3
+
+data_format:
+  - image

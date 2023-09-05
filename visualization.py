@@ -3,11 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torchvision.transforms as transforms 
 
-from data_processing import get_train_data
+from data_processing import WaterbirdsDatasetLoader
 
 
 def show_image(train_data):
-    train_data = get_train_data()
+    waterbirds_loader = WaterbirdsDatasetLoader("C:/Users/User/Desktop/MyProjects/waterbirds_training/data", "waterbirds", download = True)
+    train_data = waterbirds_loader.get_train_data()
 
     transform = transforms.Compose([
         transforms.ToTensor(),

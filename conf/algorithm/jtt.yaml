@@ -1,5 +1,8 @@
 name: jtt
 
 params:
-  lambda_up: 20
-  num_epochs_for_final_model: 300
+  lambda_up: 80
+  num_epochs_for_final_model: 400
+
+data_format:
+  - vector

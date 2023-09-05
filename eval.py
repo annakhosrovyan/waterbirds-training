@@ -5,9 +5,9 @@ from tqdm import tqdm
 log = logging.getLogger(__name__)
 
 
-#       ------------------------------------------------------------------------------------------------------------
-#       -----------------------------Functions for Checking Accuracy and Group Accuracy-----------------------------
-#       ------------------------------------------------------------------------------------------------------------
+#       ----------------------------------------------------------------------------------------
+#       -------------------Functions for Checking Accuracy and Group Accuracy-------------------
+#       ----------------------------------------------------------------------------------------
 
 def check_accuracy(loader, model, device):
     num_correct = 0
@@ -39,10 +39,10 @@ def check_group_accuracy(dataset, model, label, background, dataset_type, device
         metadata = metadata.to(device = device)
         _, pred = model(x.unsqueeze(0)).max(1)
 
-        if dataset_type == "resnet50_representation":
-             c = metadata
-        elif dataset_type == "waterbirds_images":
-             c = metadata[0]
+        # if dataset_type == "resnet50_representation":
+        c = metadata
+        if dataset_type == "waterbirds":
+            c = metadata[0]
 
         if (y.item() == label) and (c.item() == background): 
             group_total += 1
@@ -52,9 +52,9 @@ def check_group_accuracy(dataset, model, label, background, dataset_type, device
     log.info(f"Got {group_correct} / {group_total} with accuracy {float(group_correct)/float(group_total)*100:.2f}")
 
 
-#       ------------------------------------------------------------------------------------------------------------
-#       -----------------------------------------Accuracy Logging Functions-----------------------------------------
-#       ------------------------------------------------------------------------------------------------------------
+#       ----------------------------------------------------------------------------------------
+#       -------------------------------Accuracy Logging Functions-------------------------------
+#       ----------------------------------------------------------------------------------------
 
 
 def print_accuracy_for_loaders(train_loader, test_loader, model, device):

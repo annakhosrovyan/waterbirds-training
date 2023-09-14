@@ -1,10 +1,12 @@
 name: regnet_representation
+
+_target_:  datamodule.representation_data.DataModule
+
 in_features: 7392
+batch_size: 32
 
-paths:
-  train_path: "C:/Users/User/Desktop/Datasets/swag_pretrained_regnety_128gf_in1k/train.npz"
-  test_path: "C:/Users/User/Desktop/Datasets/swag_pretrained_regnety_128gf_in1k/test.npz"
-  val_path: "C:/Users/User/Desktop/Datasets/swag_pretrained_regnety_128gf_in1k/val.npz"
+train_path: ${oc.env:DATA_ROOT}/swag_pretrained_regnety_128gf_in1k/train.npz
+test_path: ${oc.env:DATA_ROOT}/swag_pretrained_regnety_128gf_in1k/test.npz
+val_path: ${oc.env:DATA_ROOT}/swag_pretrained_regnety_128gf_in1k/val.npz
 
-data_format:
-  - vector
+data_format: vector

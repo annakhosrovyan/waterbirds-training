@@ -1,7 +1,7 @@
 defaults:
   - algorithm: jtt
   - model: linear_classifier
-  - dataset: resnet50_representation
+  - dataset: regnet_representation
   - optimizer: adam
   - loss: cross_entropy
   - override hydra/job_logging: custom

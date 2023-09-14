@@ -1,0 +1,99 @@
+algorithm:
+  name: jtt
+  params:
+    lambda_up: 100
+    num_epochs_for_final_model: 300
+  data_format: vector
+model:
+  name: linear_classifier
+  linear_config:
+    _target_: models.LinearClassifier
+  params:
+    num_classes: 2
+    num_epochs: 60
+    cfg: null
+  data_format: vector
+dataset:
+  name: resnet50_representation
+  _target_: datamodule.representation_data.DataModule
+  in_features: 2048
+  batch_size: 64
+  train_path: ${oc.env:DATA_ROOT}/resnet50/train.npz
+  test_path: ${oc.env:DATA_ROOT}/resnet50/test.npz
+  val_path: ${oc.env:DATA_ROOT}/resnet50/val.npz
+  data_format: vector
+optimizer:
+  name: adam
+  optim:
+    _target_: torch.optim.Adam
+    lr: 0.001
+    weight_decay: 1.0e-05
+loss:
+  name: cross_entropy
+  loss_function:
+    _target_: torch.nn.CrossEntropyLoss
+Error executing job with overrides: []
+Backend TkAgg is interactive backend. Turning interactive mode on.
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\_internal\instantiate\_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: LinearClassifier.__init__() missing 1 required positional argument: 'cfg'
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+  File "c:\Users\User\.vscode\extensions\ms-python.python-2023.14.0\pythonFiles\lib\python\debugpy\adapter/../..\debugpy\launcher/../..\debugpy\__main__.py", line 39, in <module>
+    cli.main()
+  File "c:\Users\User\.vscode\extensions\ms-python.python-2023.14.0\pythonFiles\lib\python\debugpy\adapter/../..\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 430, in main
+    run()
+  File "c:\Users\User\.vscode\extensions\ms-python.python-2023.14.0\pythonFiles\lib\python\debugpy\adapter/../..\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "c:\Users\User\.vscode\extensions\ms-python.python-2023.14.0\pythonFiles\lib\python\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\.vscode\extensions\ms-python.python-2023.14.0\pythonFiles\lib\python\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "c:\Users\User\.vscode\extensions\ms-python.python-2023.14.0\pythonFiles\lib\python\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\User\Desktop\MyProjects\waterbirds_training\main.py", line 101, in <module>
+    main()
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\main.py", line 94, in decorated_main
+    _run_hydra(
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\_internal\utils.py", line 394, in _run_hydra
+    _run_app(
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\_internal\utils.py", line 457, in _run_app
+    run_and_report(
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\_internal\utils.py", line 223, in run_and_report
+    raise ex
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\_internal\utils.py", line 220, in run_and_report
+    return func()
+           ^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\_internal\utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+            ^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\_internal\hydra.py", line 132, in run
+    _ = ret.return_value
+        ^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\core\utils.py", line 260, in return_value
+    raise self._return_value
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\core\utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\MyProjects\waterbirds_training\main.py", line 69, in main
+    model = instantiate(cfg.model.linear_config, cfg.dataset.in_features, cfg.model.params.num_classes).to(device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\_internal\instantiate\_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\_internal\instantiate\_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\hydra\_internal\instantiate\_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'models.LinearClassifier':
+TypeError("LinearClassifier.__init__() missing 1 required positional argument: 'cfg'")
+full_key: model.linear_config

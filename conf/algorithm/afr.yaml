@@ -1,0 +1,10 @@
+name: afr
+
+trainer:
+  _target_: train.afr.Trainer
+
+params:
+  gamma: 20
+  num_epochs_for_final_model: 500
+
+data_format: vector

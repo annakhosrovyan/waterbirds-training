@@ -1,5 +1,5 @@
 name: standard_training
 
-data_format:
+data_format: 
   - vector
   - image

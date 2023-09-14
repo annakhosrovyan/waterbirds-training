@@ -1,5 +1,6 @@
 import hydra
 import logging
+from dotenv import load_dotenv
 from omegaconf import OmegaConf
 from hydra.utils import instantiate
 
@@ -9,19 +10,18 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 import torchvision.transforms as transforms 
 
-from train import Trainer
 from visualization import show_image 
-from eval import (jtt_performance,
+from eval import (algorithm_performance,
                   standard_model_performance,
                   print_group_accuracies)
-from data_processing import WaterbirdsDatasetLoader, RepresentationDatasetLoader
 
-
+load_dotenv('.env')
 log = logging.getLogger(__name__)
 
 
 @hydra.main(version_base = None, config_path = "conf", config_name = "config")
 def main(cfg):
+
       log.info(OmegaConf.to_yaml(cfg))
       device = torch.device("cuda" if torch. cuda.is_available() else "cpu")
 
@@ -35,72 +35,86 @@ def main(cfg):
       model_data_format = set(cfg.model.data_format)
       dataset_format = set(cfg.dataset.data_format)
 
-      intersection = algorithm_data_format.intersection(model_data_format, dataset_format)
-      if not intersection:
+      if not algorithm_data_format.intersection(model_data_format, dataset_format):
             raise NotImplementedError
 
 # -----------------------Initialize the loss function-----------------------
    
       loss_function = instantiate(cfg.loss.loss_function)
 
-# --------------------Load data based on the selected dataset--------------------
+# --------------------Load data--------------------
 
-      representation_datasets_names = ["resnet50_representation", "dino_v2_representation", "regnet_representation"]
-
-      if dataset_name == "waterbirds":
-            waterbirds_loader = WaterbirdsDatasetLoader("C:/Users/User/Desktop/Datasets/waterbirds_v1.0", "waterbirds", download=True)
-            train_dataset = waterbirds_loader.get_train_data() 
-            test_dataset = waterbirds_loader.get_test_data()
-            train_loader, test_loader = waterbirds_loader.load_data(cfg.model.params.batch_size)
-            show_image(train_dataset)
-            
-      elif dataset_name in representation_datasets_names:
-            train_path = cfg.dataset.paths.train_path
-            test_path = cfg.dataset.paths.test_path
-            val_path = cfg.dataset.paths.val_path
-            resnet_loader = RepresentationDatasetLoader(train_path, test_path, val_path, cfg.model.params.batch_size)
-            train_loader, test_loader, train_dataset, test_dataset, val_dataset = resnet_loader.load_data()
-
-      else: 
+      if cfg.dataset.data_format not in ["vector", "image"]:
             raise NotImplementedError
+
+      datamodule = instantiate(cfg.dataset)
+      train_loader, val_loader, test_loader, train_dataset, val_dataset, test_dataset = datamodule.prepare_data()
+
 
 # --------------------Create a neural network model based on the chosen 'model_name'--------------------
 
       if model_name == "resnet50":
             model = instantiate(cfg.model.resnet50_config).to(device)
       elif model_name == "cnn":
-            model = instantiate(cfg.model.cnn_config, cfg.model.params.in_channel, cfg.model.params.num_classes).to(device)
+            model = instantiate(cfg.model, cfg.model.params.in_channel, 
+                                cfg.model.params.num_classes, loss_function).to(device)
       elif model_name == "linear_classifier":
-            model = instantiate(cfg.model.linear_config, cfg.dataset.in_features, cfg.model.params.num_classes).to(device)
+            model = instantiate(cfg.model, cfg.dataset.in_features, 
+                                cfg.model.params.num_classes, loss_function).to(device)
       else: 
             raise NotImplementedError
-      
+
 # -----------------------Initialize the optimizer-----------------------
 
       optimizer = instantiate(cfg.optimizer.optim, params = model.parameters())
 
 # -------------------Initialize the Learning Rate Scheduler-------------------
 
-      scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.1, patience=5, verbose=True)
+      scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor = 0.1, patience = 5, verbose=True)
 
-# --------------------Train the model and evaluate its performance--------------------
+# --------------------Train the model and evaluate performance--------------------
 
-      trainer = Trainer(model)
-      trainer.train_model(model, cfg.model.params.num_epochs, train_loader, loss_function, optimizer, scheduler, device)
+      trainer = instantiate(cfg.algorithm.trainer, model)
+
+      if algorithm_name == "afr":
+            erm_data_size = int(len(train_dataset) * 0.8)
+            rw_data_size = len(train_dataset) - erm_data_size
+            erm_data, rw_data = torch.utils.data.random_split(train_dataset, [erm_data_size, rw_data_size])
+            erm_data_loader = DataLoader(erm_data, cfg.dataset.batch_size, shuffle = True)
+            rw_data_loader = DataLoader(rw_data, cfg.dataset.batch_size, shuffle = True)
+            trainer.first_stage_training(model, cfg.model.params.num_epochs, erm_data_loader, loss_function, optimizer, device)
+            standard_model_performance(erm_data_loader, test_loader, test_dataset, model, dataset_name, device)
+
+            weights = trainer.compute_afr_weights(model, erm_data, cfg.algorithm.params.gamma, device)
+            rw_data_loader = DataLoader(rw_data, cfg.dataset.batch_size, shuffle = True)
+            trainer.second_stage_training(model, cfg.algorithm.params.num_epochs_for_final_model, rw_data_loader,
+                                           loss_function, optimizer,  weights, scheduler, device)
+
+            log.info("\nValidation Group Accuracies\n")
+            print_group_accuracies(val_dataset, model, dataset_name, device)
+            algorithm_performance(rw_data_loader, test_loader, test_dataset, model, dataset_name, device)
+
+            return
+
+
+      
+      trainer.first_stage_training(model, cfg.model.params.num_epochs, train_loader, loss_function, optimizer, device)
       standard_model_performance(train_loader, test_loader, test_dataset, model, dataset_name, device)
+
 
 # --------------------Apply the 'jtt' algorithm--------------------
 
       if algorithm_name == "jtt":
             upsampled_dataset = trainer.construct_upsampled_dataset(model, train_dataset, cfg.algorithm.params.lambda_up, device)
-            new_train_loader = DataLoader(upsampled_dataset, cfg.model.params.batch_size, shuffle = True)
+            new_train_loader = DataLoader(upsampled_dataset, cfg.dataset.batch_size, shuffle = True)
  
-            trainer.train_model(model, cfg.algorithm.params.num_epochs_for_final_model, new_train_loader, loss_function, optimizer, scheduler, device)
+            trainer.second_stage_training(model, cfg.algorithm.params.num_epochs_for_final_model, new_train_loader, loss_function, optimizer, scheduler, device)
 
             log.info("\nValidation Group Accuracies\n")
             print_group_accuracies(val_dataset, model, dataset_name, device)
-            jtt_performance(train_loader, test_loader, test_dataset, model, dataset_name, device)
+            algorithm_performance(train_loader, test_loader, test_dataset, model, dataset_name, device)
  
  
 if __name__ == "__main__":
       main()
+      

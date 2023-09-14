@@ -1,0 +1,135 @@
+2023-09-07 12:13:54,685 INFO    StreamThr :13484 [internal.py:wandb_internal():86] W&B internal server running at pid: 13484, started at: 2023-09-07 12:13:54.685267
+2023-09-07 12:13:54,697 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status
+2023-09-07 12:13:54,699 INFO    WriterThread:13484 [datastore.py:open_for_write():85] open: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\run-zjxfssah.wandb
+2023-09-07 12:13:54,699 DEBUG   SenderThread:13484 [sender.py:send():379] send: header
+2023-09-07 12:13:54,726 DEBUG   SenderThread:13484 [sender.py:send():379] send: run
+2023-09-07 12:13:55,753 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: check_version
+2023-09-07 12:13:55,776 INFO    SenderThread:13484 [dir_watcher.py:__init__():211] watching files in: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files
+2023-09-07 12:13:55,776 INFO    SenderThread:13484 [sender.py:_start_run_threads():1121] run started: zjxfssah with start time 1694074434.685267
+2023-09-07 12:13:55,776 DEBUG   SenderThread:13484 [sender.py:send_request():406] send_request: summary_record
+2023-09-07 12:13:55,776 INFO    SenderThread:13484 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-07 12:13:55,776 DEBUG   SenderThread:13484 [sender.py:send_request():406] send_request: check_version
+2023-09-07 12:13:56,124 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: run_start
+2023-09-07 12:13:56,781 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\wandb-summary.json
+2023-09-07 12:13:57,635 DEBUG   HandlerThread:13484 [system_info.py:__init__():31] System info init
+2023-09-07 12:13:57,635 DEBUG   HandlerThread:13484 [system_info.py:__init__():46] System info init done
+2023-09-07 12:13:57,635 INFO    HandlerThread:13484 [system_monitor.py:start():181] Starting system monitor
+2023-09-07 12:13:57,635 INFO    HandlerThread:13484 [system_monitor.py:probe():201] Collecting system info
+2023-09-07 12:13:57,635 INFO    SystemMonitor:13484 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-09-07 12:13:57,635 INFO    SystemMonitor:13484 [interfaces.py:start():190] Started cpu monitoring
+2023-09-07 12:13:57,642 INFO    SystemMonitor:13484 [interfaces.py:start():190] Started disk monitoring
+2023-09-07 12:13:57,642 INFO    SystemMonitor:13484 [interfaces.py:start():190] Started gpu monitoring
+2023-09-07 12:13:57,642 INFO    SystemMonitor:13484 [interfaces.py:start():190] Started memory monitoring
+2023-09-07 12:13:57,649 INFO    SystemMonitor:13484 [interfaces.py:start():190] Started network monitoring
+2023-09-07 12:13:57,705 DEBUG   HandlerThread:13484 [system_info.py:probe():195] Probing system
+2023-09-07 12:13:57,705 DEBUG   HandlerThread:13484 [system_info.py:_probe_git():180] Probing git
+2023-09-07 12:13:57,723 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:13:57,774 DEBUG   HandlerThread:13484 [system_info.py:_probe_git():188] Probing git done
+2023-09-07 12:13:57,774 DEBUG   HandlerThread:13484 [system_info.py:probe():240] Probing system done
+2023-09-07 12:13:57,774 DEBUG   HandlerThread:13484 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.11.4', 'heartbeatAt': '2023-09-07T08:13:57.705277', 'startedAt': '2023-09-07T08:13:54.661565', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'C:\\Users\\User\\Desktop\\MyProjects\\waterbirds_training\\main.py', 'codePath': 'main.py', 'git': {'remote': 'https://github.com/annakhosrovyan/waterbirds-training.git', 'commit': '5ae0a49b8657f310b506cedfc24f1ded4caa37c7'}, 'email': 'anna.khosrovyan.1806@gmail.com', 'root': 'C:/Users/User/Desktop/MyProjects/waterbirds_training', 'host': 'DESKTOP-3FF69ID', 'username': 'User', 'executable': 'C:\\Program Files\\Python311\\python.exe', 'cpu_count': 14, 'cpu_count_logical': 20, 'cpu_freq': {'current': 1489.0, 'min': 0.0, 'max': 2700.0}, 'cpu_freq_per_core': [{'current': 1489.0, 'min': 0.0, 'max': 2700.0}], 'disk': {'total': 476.20214462280273, 'used': 92.93369674682617}, 'gpu': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'memory_total': 6442450944}], 'memory': {'total': 15.715873718261719}}
+2023-09-07 12:13:57,774 INFO    HandlerThread:13484 [system_monitor.py:probe():211] Finished collecting system info
+2023-09-07 12:13:57,774 INFO    HandlerThread:13484 [system_monitor.py:probe():214] Publishing system info
+2023-09-07 12:13:57,774 DEBUG   HandlerThread:13484 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-09-07 12:13:57,776 DEBUG   HandlerThread:13484 [system_info.py:_save_pip():67] Saving pip packages done
+2023-09-07 12:13:57,778 INFO    HandlerThread:13484 [system_monitor.py:probe():216] Finished publishing system info
+2023-09-07 12:13:57,778 DEBUG   SenderThread:13484 [sender.py:send():379] send: files
+2023-09-07 12:13:57,778 INFO    SenderThread:13484 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2023-09-07 12:13:57,786 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\wandb-metadata.json
+2023-09-07 12:13:57,786 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\requirements.txt
+2023-09-07 12:13:57,794 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:13:57,794 DEBUG   SenderThread:13484 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:13:58,117 DEBUG   SenderThread:13484 [sender.py:send():379] send: telemetry
+2023-09-07 12:13:58,795 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:13:59,025 INFO    wandb-upload_0:13484 [upload_job.py:push():131] Uploaded file C:\Users\User\AppData\Local\Temp\tmpzlyz6badwandb\llvjc25m-wandb-metadata.json
+2023-09-07 12:13:59,740 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:00,052 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:00,826 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:01,750 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:02,834 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:03,758 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:04,849 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:05,066 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:05,779 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:06,859 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:07,792 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:08,870 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:09,817 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:10,149 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:10,897 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:11,834 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:12,798 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:14:12,798 DEBUG   SenderThread:13484 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:14:12,910 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:13,837 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:14,925 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:15,200 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:15,884 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:16,935 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:17,912 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:18,963 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:19,915 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:19,979 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:20,268 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:20,980 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:21,937 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:21,984 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:22,998 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:23,949 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:24,014 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:25,018 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:25,332 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:25,951 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:26,032 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\config.yaml
+2023-09-07 12:14:27,037 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:27,814 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:14:27,815 DEBUG   SenderThread:13484 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:14:28,001 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:29,050 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:30,014 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:30,663 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:31,065 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:32,024 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:33,076 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:34,041 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:35,095 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:35,704 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:36,048 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:37,103 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:38,063 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:39,105 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:40,095 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:40,743 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:41,127 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:42,112 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:42,808 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:14:42,808 DEBUG   SenderThread:13484 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:14:43,139 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:44,132 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:45,153 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:45,846 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:46,163 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:47,173 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:48,184 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:49,193 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:50,223 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:50,911 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:51,212 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:52,242 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:53,230 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:54,263 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:55,234 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:55,918 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:14:56,292 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:57,250 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:14:57,652 DEBUG   SystemMonitor:13484 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-09-07 12:14:57,654 DEBUG   SenderThread:13484 [sender.py:send():379] send: stats
+2023-09-07 12:14:57,826 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-07 12:14:57,826 DEBUG   SenderThread:13484 [sender.py:send_request():406] send_request: stop_status
+2023-09-07 12:14:58,393 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:14:59,272 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:15:00,437 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:15:01,024 DEBUG   HandlerThread:13484 [handler.py:handle_request():144] handle_request: status_report
+2023-09-07 12:15:01,373 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:15:02,463 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-07 12:15:03,387 INFO    Thread-23 :13484 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230907_121354-zjxfssah\files\output.log
+2023-09-07 12:15:04,513 ERROR   gpu       :13484 [interfaces.py:monitor():144] Failed to sample metric: Not Supported

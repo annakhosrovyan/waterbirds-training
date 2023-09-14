@@ -1,8 +1,10 @@
 name: jtt
 
-params:
-  lambda_up: 80
-  num_epochs_for_final_model: 400
+trainer:
+  _target_: train.jtt.Trainer
 
-data_format:
-  - vector
+params:
+  lambda_up: 120
+  num_epochs_for_final_model: 700
+
+data_format: vector

@@ -3,3 +3,4 @@ __pycache__
 /outputs
 /resnet50
 /Figure_1.png
+.env

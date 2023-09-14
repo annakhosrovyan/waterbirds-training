@@ -1,4 +1,9 @@
 name: waterbirds
 
-data_format:
-  - image
+_target_:  datamodule.image_data.DataModule
+
+download: True
+batch_size: 16
+root_dir: ${oc.env:DATA_ROOT}/waterbirds_v1.0
+
+data_format: image

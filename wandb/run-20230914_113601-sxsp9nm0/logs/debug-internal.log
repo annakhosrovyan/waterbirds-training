@@ -1,0 +1,572 @@
+2023-09-14 11:36:01,241 INFO    StreamThr :5716 [internal.py:wandb_internal():86] W&B internal server running at pid: 5716, started at: 2023-09-14 11:36:01.241775
+2023-09-14 11:36:01,243 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: status
+2023-09-14 11:36:01,253 INFO    WriterThread:5716 [datastore.py:open_for_write():85] open: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\run-sxsp9nm0.wandb
+2023-09-14 11:36:01,253 DEBUG   SenderThread:5716 [sender.py:send():379] send: header
+2023-09-14 11:36:01,277 DEBUG   SenderThread:5716 [sender.py:send():379] send: run
+2023-09-14 11:36:02,198 INFO    SenderThread:5716 [dir_watcher.py:__init__():211] watching files in: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files
+2023-09-14 11:36:02,198 INFO    SenderThread:5716 [sender.py:_start_run_threads():1121] run started: sxsp9nm0 with start time 1694676961.241774
+2023-09-14 11:36:02,198 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:02,198 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:02,206 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: check_version
+2023-09-14 11:36:02,214 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: check_version
+2023-09-14 11:36:02,566 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: run_start
+2023-09-14 11:36:02,592 DEBUG   HandlerThread:5716 [system_info.py:__init__():31] System info init
+2023-09-14 11:36:02,592 DEBUG   HandlerThread:5716 [system_info.py:__init__():46] System info init done
+2023-09-14 11:36:02,592 INFO    HandlerThread:5716 [system_monitor.py:start():181] Starting system monitor
+2023-09-14 11:36:02,592 INFO    HandlerThread:5716 [system_monitor.py:probe():201] Collecting system info
+2023-09-14 11:36:02,592 INFO    SystemMonitor:5716 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-09-14 11:36:02,592 INFO    SystemMonitor:5716 [interfaces.py:start():190] Started cpu monitoring
+2023-09-14 11:36:02,592 INFO    SystemMonitor:5716 [interfaces.py:start():190] Started disk monitoring
+2023-09-14 11:36:02,603 INFO    SystemMonitor:5716 [interfaces.py:start():190] Started gpu monitoring
+2023-09-14 11:36:02,609 DEBUG   HandlerThread:5716 [system_info.py:probe():195] Probing system
+2023-09-14 11:36:02,609 INFO    SystemMonitor:5716 [interfaces.py:start():190] Started memory monitoring
+2023-09-14 11:36:02,617 DEBUG   HandlerThread:5716 [system_info.py:_probe_git():180] Probing git
+2023-09-14 11:36:02,619 INFO    SystemMonitor:5716 [interfaces.py:start():190] Started network monitoring
+2023-09-14 11:36:02,630 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:02,690 DEBUG   HandlerThread:5716 [system_info.py:_probe_git():188] Probing git done
+2023-09-14 11:36:02,690 DEBUG   HandlerThread:5716 [system_info.py:probe():240] Probing system done
+2023-09-14 11:36:02,690 DEBUG   HandlerThread:5716 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.11.4', 'heartbeatAt': '2023-09-14T07:36:02.609285', 'startedAt': '2023-09-14T07:36:01.225190', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'C:\\Users\\User\\Desktop\\MyProjects\\waterbirds_training\\main.py', 'codePath': 'main.py', 'git': {'remote': 'https://github.com/annakhosrovyan/waterbirds-training.git', 'commit': '5ae0a49b8657f310b506cedfc24f1ded4caa37c7'}, 'email': 'anna.khosrovyan.1806@gmail.com', 'root': 'C:/Users/User/Desktop/MyProjects/waterbirds_training', 'host': 'DESKTOP-3FF69ID', 'username': 'User', 'executable': 'C:\\Program Files\\Python311\\python.exe', 'cpu_count': 14, 'cpu_count_logical': 20, 'cpu_freq': {'current': 1489.0, 'min': 0.0, 'max': 2700.0}, 'cpu_freq_per_core': [{'current': 1489.0, 'min': 0.0, 'max': 2700.0}], 'disk': {'total': 476.20214462280273, 'used': 88.38371658325195}, 'gpu': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'memory_total': 6442450944}], 'memory': {'total': 15.715873718261719}}
+2023-09-14 11:36:02,693 INFO    HandlerThread:5716 [system_monitor.py:probe():211] Finished collecting system info
+2023-09-14 11:36:02,693 INFO    HandlerThread:5716 [system_monitor.py:probe():214] Publishing system info
+2023-09-14 11:36:02,693 DEBUG   HandlerThread:5716 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-09-14 11:36:02,693 DEBUG   HandlerThread:5716 [system_info.py:_save_pip():67] Saving pip packages done
+2023-09-14 11:36:02,719 INFO    HandlerThread:5716 [system_monitor.py:probe():216] Finished publishing system info
+2023-09-14 11:36:02,722 DEBUG   SenderThread:5716 [sender.py:send():379] send: files
+2023-09-14 11:36:02,722 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2023-09-14 11:36:02,739 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-14 11:36:02,739 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: stop_status
+2023-09-14 11:36:03,219 DEBUG   SenderThread:5716 [sender.py:send():379] send: telemetry
+2023-09-14 11:36:03,221 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\requirements.txt
+2023-09-14 11:36:03,221 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:03,221 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:03,221 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-metadata.json
+2023-09-14 11:36:03,836 INFO    wandb-upload_0:5716 [upload_job.py:push():131] Uploaded file C:\Users\User\AppData\Local\Temp\tmp4aps8chfwandb\ujfhnjnr-wandb-metadata.json
+2023-09-14 11:36:04,648 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:05,249 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:05,413 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:05,419 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:05,419 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:05,419 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:05,651 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:05,651 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:05,651 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:05,654 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:05,873 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:05,881 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:05,881 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:05,881 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:06,104 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:06,104 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:06,105 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:06,105 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:06,255 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:06,308 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: status_report
+2023-09-14 11:36:06,331 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:06,331 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:06,332 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:06,332 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:06,557 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:06,557 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:06,557 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:06,557 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:06,672 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:06,784 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:06,795 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:06,795 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:06,795 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:07,034 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:07,034 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:07,034 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:07,034 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:07,271 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:07,271 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:07,271 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:07,271 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:07,271 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:07,271 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:07,505 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:07,505 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:07,505 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:07,505 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:07,753 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:07,754 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:07,754 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:07,754 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:07,996 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:07,996 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:07,996 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:07,996 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:08,222 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:08,222 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:08,222 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:08,223 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:08,282 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:08,440 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:08,447 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:08,447 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:08,447 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:08,679 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:08,684 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:08,684 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:08,684 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:08,684 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:08,919 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:08,919 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:08,919 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:08,919 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:09,166 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:09,167 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:09,167 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:09,167 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:09,285 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:09,285 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:09,410 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:09,410 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:09,413 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:09,413 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:09,665 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:09,665 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:09,667 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:09,667 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:09,895 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:09,895 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:09,895 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:09,895 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:10,142 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:10,142 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:10,142 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:10,142 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:10,298 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:10,386 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:10,386 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:10,386 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:10,396 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:10,637 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:10,637 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:10,637 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:10,637 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:10,700 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:10,871 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:10,872 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:10,872 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:10,872 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:11,120 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:11,120 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:11,120 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:11,120 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:11,304 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:11,304 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:11,336 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: status_report
+2023-09-14 11:36:11,363 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:11,364 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:11,364 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:11,364 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:11,607 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:11,607 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:11,607 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:11,607 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:11,841 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:11,841 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:11,841 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:11,841 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:12,072 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:12,072 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:12,072 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:12,072 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:12,305 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:12,312 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:12,312 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:12,312 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:12,312 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:12,539 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:12,539 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:12,539 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:12,539 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:12,707 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:12,784 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:12,784 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:12,784 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:12,784 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:13,028 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:13,029 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:13,029 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:13,030 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:13,267 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:13,268 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:13,268 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:13,269 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:13,314 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:13,314 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:13,507 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:13,509 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:13,509 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:13,510 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:13,751 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:13,751 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:13,751 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:13,751 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:13,983 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:13,983 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:13,983 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:13,983 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:14,235 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:14,235 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:14,235 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:14,235 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:14,329 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:14,483 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:14,483 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:14,483 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:14,483 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:14,725 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:14,725 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:14,725 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:14,725 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:14,725 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:15,010 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:15,010 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:15,010 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:15,010 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:15,246 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:15,247 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:15,247 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:15,249 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:15,334 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:15,334 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:15,500 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:15,500 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:15,500 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:15,500 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:15,751 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:15,751 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:15,751 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:15,751 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:15,999 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:15,999 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:15,999 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:15,999 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:16,247 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:16,247 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:16,249 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:16,249 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:16,344 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:16,353 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: status_report
+2023-09-14 11:36:16,492 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:16,493 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:16,493 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:16,494 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:16,727 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:16,727 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:16,727 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:16,731 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:16,745 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:17,032 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:17,032 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:17,032 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:17,037 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:17,289 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:17,298 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:17,298 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:17,298 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:17,345 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:17,345 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:17,506 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:17,506 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:17,506 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:17,506 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:17,728 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:17,728 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:17,728 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:17,728 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:17,760 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-14 11:36:17,760 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: stop_status
+2023-09-14 11:36:17,985 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:18,048 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:18,048 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:18,048 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:18,205 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:18,205 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:18,205 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:18,205 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:18,348 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:18,444 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:18,445 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:18,445 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:18,445 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:18,689 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:18,689 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:18,689 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:18,689 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:18,762 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:19,218 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:19,218 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:19,218 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:19,218 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:19,370 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:19,370 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:19,850 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:19,857 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:19,857 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:19,857 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:20,371 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:20,512 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:20,550 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:20,550 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:20,550 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:20,794 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:21,236 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:21,236 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:21,236 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:21,252 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:21,379 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:21,383 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:21,445 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: status_report
+2023-09-14 11:36:21,897 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:21,897 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:21,897 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:21,897 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:22,393 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:22,594 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:22,599 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:22,599 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:22,601 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:22,815 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:23,277 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:23,277 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:23,290 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:23,292 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:23,410 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:23,410 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:23,994 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:23,998 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:23,998 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:24,000 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:24,431 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:24,838 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:24,895 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:24,895 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:24,895 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:24,895 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:25,433 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:25,434 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:25,641 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:25,644 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:25,644 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:25,644 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:26,378 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:26,380 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:26,380 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:26,381 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:26,443 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:26,481 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: status_report
+2023-09-14 11:36:26,875 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:27,164 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:27,164 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:27,172 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:27,172 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:27,445 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:27,447 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:28,044 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:28,044 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:28,044 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:28,052 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:28,452 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:28,858 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:28,858 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:28,858 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:28,858 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:28,920 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:29,454 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:29,454 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:29,643 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:29,643 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:29,643 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:29,643 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:30,425 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:30,425 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:30,425 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:30,425 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:30,457 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:30,944 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:31,247 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:31,247 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:31,247 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:31,255 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:31,470 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:31,470 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:31,591 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: status_report
+2023-09-14 11:36:32,159 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:32,159 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:32,167 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:32,167 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:32,483 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\config.yaml
+2023-09-14 11:36:32,483 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:32,779 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-14 11:36:32,779 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: stop_status
+2023-09-14 11:36:33,017 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:33,025 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:33,207 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:33,207 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:33,207 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:33,491 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:33,491 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:33,772 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:33,788 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:33,788 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:33,788 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:34,510 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:34,557 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:34,557 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:34,557 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:34,557 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:35,060 ERROR   gpu       :5716 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-09-14 11:36:35,409 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:35,409 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:35,409 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:35,409 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:35,529 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:35,529 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:36,189 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:36,189 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:36,189 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:36,189 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:36,542 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:36,982 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-14 11:36:36,982 DEBUG   SenderThread:5716 [sender.py:send():379] send: history
+2023-09-14 11:36:36,982 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: summary_record
+2023-09-14 11:36:36,982 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:36,982 DEBUG   SenderThread:5716 [sender.py:send():379] send: telemetry
+2023-09-14 11:36:36,990 DEBUG   SenderThread:5716 [sender.py:send():379] send: exit
+2023-09-14 11:36:36,990 INFO    SenderThread:5716 [sender.py:send_exit():584] handling exit code: 0
+2023-09-14 11:36:36,990 INFO    SenderThread:5716 [sender.py:send_exit():586] handling runtime: 34
+2023-09-14 11:36:36,990 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:36,990 INFO    SenderThread:5716 [sender.py:send_exit():592] send defer
+2023-09-14 11:36:36,990 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:36,990 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 0
+2023-09-14 11:36:36,990 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:36,990 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 0
+2023-09-14 11:36:36,990 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 1
+2023-09-14 11:36:36,990 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:36,990 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 1
+2023-09-14 11:36:36,990 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:36,990 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 1
+2023-09-14 11:36:36,990 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 2
+2023-09-14 11:36:36,990 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:36,990 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 2
+2023-09-14 11:36:36,990 INFO    HandlerThread:5716 [system_monitor.py:finish():190] Stopping system monitor
+2023-09-14 11:36:36,990 INFO    HandlerThread:5716 [interfaces.py:finish():202] Joined cpu monitor
+2023-09-14 11:36:36,990 INFO    HandlerThread:5716 [interfaces.py:finish():202] Joined disk monitor
+2023-09-14 11:36:36,998 DEBUG   SystemMonitor:5716 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-09-14 11:36:36,998 DEBUG   SystemMonitor:5716 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-09-14 11:36:37,006 DEBUG   SystemMonitor:5716 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-09-14 11:36:37,055 INFO    HandlerThread:5716 [interfaces.py:finish():202] Joined gpu monitor
+2023-09-14 11:36:37,055 INFO    HandlerThread:5716 [interfaces.py:finish():202] Joined memory monitor
+2023-09-14 11:36:37,055 INFO    HandlerThread:5716 [interfaces.py:finish():202] Joined network monitor
+2023-09-14 11:36:37,055 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:37,055 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 2
+2023-09-14 11:36:37,055 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 3
+2023-09-14 11:36:37,055 DEBUG   SenderThread:5716 [sender.py:send():379] send: stats
+2023-09-14 11:36:37,063 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:37,063 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 3
+2023-09-14 11:36:37,063 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: status_report
+2023-09-14 11:36:37,063 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:37,063 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 3
+2023-09-14 11:36:37,063 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 4
+2023-09-14 11:36:37,063 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:37,063 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 4
+2023-09-14 11:36:37,063 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:37,063 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 4
+2023-09-14 11:36:37,063 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 5
+2023-09-14 11:36:37,063 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:37,063 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 5
+2023-09-14 11:36:37,071 DEBUG   SenderThread:5716 [sender.py:send():379] send: summary
+2023-09-14 11:36:37,071 INFO    SenderThread:5716 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-14 11:36:37,071 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:37,071 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 5
+2023-09-14 11:36:37,071 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 6
+2023-09-14 11:36:37,071 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:37,079 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 6
+2023-09-14 11:36:37,079 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:37,079 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 6
+2023-09-14 11:36:37,087 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: status_report
+2023-09-14 11:36:37,363 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 7
+2023-09-14 11:36:37,363 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:37,363 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 7
+2023-09-14 11:36:37,363 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:37,363 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 7
+2023-09-14 11:36:37,552 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\config.yaml
+2023-09-14 11:36:37,552 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:37,810 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 8
+2023-09-14 11:36:37,810 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:37,810 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 8
+2023-09-14 11:36:37,810 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:37,810 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 8
+2023-09-14 11:36:37,810 INFO    SenderThread:5716 [job_builder.py:build():281] Attempting to build job artifact
+2023-09-14 11:36:37,819 INFO    SenderThread:5716 [job_builder.py:_get_source_type():400] is repo sourced job
+2023-09-14 11:36:37,830 INFO    SenderThread:5716 [job_builder.py:build():374] adding wandb-job metadata file
+2023-09-14 11:36:37,842 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 9
+2023-09-14 11:36:37,850 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:37,850 DEBUG   SenderThread:5716 [sender.py:send():379] send: artifact
+2023-09-14 11:36:37,850 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 9
+2023-09-14 11:36:37,990 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: poll_exit
+2023-09-14 11:36:38,559 INFO    Thread-23 :5716 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:38,862 INFO    SenderThread:5716 [sender.py:send_artifact():1475] sent artifact job-https___github.com_annakhosrovyan_waterbirds-training.git_main.py - {'id': 'QXJ0aWZhY3Q6NTY0MDY4MDc4', 'digest': '9310f96264f33adb02b6770348c097d6', 'state': 'COMMITTED', 'aliases': [{'artifactCollectionName': 'job-https___github.com_annakhosrovyan_waterbirds-training.git_main.py', 'alias': 'latest'}, {'artifactCollectionName': 'job-https___github.com_annakhosrovyan_waterbirds-training.git_main.py', 'alias': 'v1'}], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjk1NTc4MjI1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NTY2MTg1MjQ5', 'versionIndex': 3}}, 'version': 'v1'}
+2023-09-14 11:36:38,862 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:38,862 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 9
+2023-09-14 11:36:38,862 INFO    SenderThread:5716 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-09-14 11:36:39,562 INFO    SenderThread:5716 [dir_watcher.py:finish():388] scan: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files
+2023-09-14 11:36:39,562 INFO    SenderThread:5716 [dir_watcher.py:finish():402] scan save: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\config.yaml config.yaml
+2023-09-14 11:36:39,568 INFO    SenderThread:5716 [dir_watcher.py:finish():402] scan save: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log output.log
+2023-09-14 11:36:39,570 INFO    SenderThread:5716 [dir_watcher.py:finish():402] scan save: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\requirements.txt requirements.txt
+2023-09-14 11:36:39,570 INFO    SenderThread:5716 [dir_watcher.py:finish():402] scan save: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-metadata.json wandb-metadata.json
+2023-09-14 11:36:39,570 INFO    SenderThread:5716 [dir_watcher.py:finish():402] scan save: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json wandb-summary.json
+2023-09-14 11:36:39,578 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 10
+2023-09-14 11:36:39,578 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: poll_exit
+2023-09-14 11:36:39,586 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:39,586 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 10
+2023-09-14 11:36:39,586 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:39,586 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 10
+2023-09-14 11:36:39,586 INFO    SenderThread:5716 [file_pusher.py:finish():159] shutting down file pusher
+2023-09-14 11:36:40,123 INFO    wandb-upload_0:5716 [upload_job.py:push():131] Uploaded file C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\config.yaml
+2023-09-14 11:36:40,413 INFO    wandb-upload_1:5716 [upload_job.py:push():131] Uploaded file C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\output.log
+2023-09-14 11:36:40,591 INFO    wandb-upload_3:5716 [upload_job.py:push():131] Uploaded file C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\wandb-summary.json
+2023-09-14 11:36:40,777 INFO    wandb-upload_2:5716 [upload_job.py:push():131] Uploaded file C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\files\requirements.txt
+2023-09-14 11:36:40,993 INFO    Thread-22 (_thread_body):5716 [sender.py:transition_state():612] send defer: 11
+2023-09-14 11:36:41,009 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:41,009 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 11
+2023-09-14 11:36:41,009 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:41,009 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 11
+2023-09-14 11:36:41,009 INFO    SenderThread:5716 [file_pusher.py:join():164] waiting for file pusher
+2023-09-14 11:36:41,009 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 12
+2023-09-14 11:36:41,009 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:41,009 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 12
+2023-09-14 11:36:41,009 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:41,009 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 12
+2023-09-14 11:36:41,009 INFO    SenderThread:5716 [file_stream.py:finish():593] file stream finish called
+2023-09-14 11:36:41,307 INFO    SenderThread:5716 [file_stream.py:finish():597] file stream finish is done
+2023-09-14 11:36:41,307 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 13
+2023-09-14 11:36:41,307 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:41,307 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 13
+2023-09-14 11:36:41,307 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:41,307 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 13
+2023-09-14 11:36:41,307 INFO    SenderThread:5716 [sender.py:transition_state():612] send defer: 14
+2023-09-14 11:36:41,307 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: defer
+2023-09-14 11:36:41,307 INFO    HandlerThread:5716 [handler.py:handle_request_defer():170] handle defer: 14
+2023-09-14 11:36:41,307 DEBUG   SenderThread:5716 [sender.py:send():379] send: final
+2023-09-14 11:36:41,307 DEBUG   SenderThread:5716 [sender.py:send():379] send: footer
+2023-09-14 11:36:41,307 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: defer
+2023-09-14 11:36:41,307 INFO    SenderThread:5716 [sender.py:send_request_defer():608] handle sender defer: 14
+2023-09-14 11:36:41,323 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: poll_exit
+2023-09-14 11:36:41,323 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: server_info
+2023-09-14 11:36:41,323 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: get_summary
+2023-09-14 11:36:41,323 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: sampled_history
+2023-09-14 11:36:41,323 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: job_info
+2023-09-14 11:36:41,333 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: poll_exit
+2023-09-14 11:36:41,333 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: server_info
+2023-09-14 11:36:41,623 DEBUG   SenderThread:5716 [sender.py:send_request():406] send_request: job_info
+2023-09-14 11:36:41,623 DEBUG   HandlerThread:5716 [handler.py:handle_request():144] handle_request: shutdown
+2023-09-14 11:36:41,623 INFO    HandlerThread:5716 [handler.py:finish():861] shutting down handler
+2023-09-14 11:36:42,346 INFO    WriterThread:5716 [datastore.py:close():294] close: C:\Users\User\Desktop\MyProjects\waterbirds_training\wandb\run-20230914_113601-sxsp9nm0\run-sxsp9nm0.wandb
+2023-09-14 11:36:42,631 INFO    SenderThread:5716 [sender.py:finish():1552] shutting down sender
+2023-09-14 11:36:42,631 INFO    SenderThread:5716 [file_pusher.py:finish():159] shutting down file pusher
+2023-09-14 11:36:42,631 INFO    SenderThread:5716 [file_pusher.py:join():164] waiting for file pusher

@@ -85,7 +85,7 @@ def standard_model_performance(train_loader, test_loader, dataset, model, datase
     print_group_accuracies(dataset, model, dataset_type, device)
 
             
-def jtt_performance(train_loader, test_loader, dataset, model, dataset_type, device):
-    log.info("\nEvaluate JTT performance\n")
+def algorithm_performance(train_loader, test_loader, dataset, model, dataset_type, device):
+    log.info("\nEvaluate Algorithm performance\n")
     print_accuracy_for_loaders(train_loader, test_loader, model, device)
     print_group_accuracies(dataset, model, dataset_type, device)

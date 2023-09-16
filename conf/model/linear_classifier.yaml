@@ -7,4 +7,3 @@ params:
   num_epochs: 80
 
 data_format: vector
-

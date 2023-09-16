@@ -39,7 +39,6 @@ def check_group_accuracy(dataset, model, label, background, dataset_type, device
         metadata = metadata.to(device = device)
         _, pred = model(x.unsqueeze(0)).max(1)
 
-        # if dataset_type == "resnet50_representation":
         c = metadata
         if dataset_type == "waterbirds":
             c = metadata[0]

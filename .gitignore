@@ -1,6 +1,9 @@
+.env
+Figure_1.png
+visualization.py 
 __pycache__
 /data
-/outputs
 /resnet50
-/Figure_1.png
-.env
+/wandb
+/outputs
+

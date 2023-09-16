@@ -48,11 +48,6 @@ class Trainer:
                 scheduler.step(loss)
 
 
-
-    #       ---------------------------------------------------------------------
-    #       ----------------Error set and dataset upsampling--------------------
-    #       ---------------------------------------------------------------------
-
     def construct_error_set(self, model, data, device): 
         error_set = []
         for index, (x, y, _) in enumerate(tqdm(data)):

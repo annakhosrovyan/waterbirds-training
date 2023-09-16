@@ -76,6 +76,8 @@ def main(cfg):
 
       trainer = instantiate(cfg.algorithm.trainer, model)
 
+# ----------------------Apply the 'afr' algorithm----------------------
+
       if algorithm_name == "afr":
             erm_data_size = int(len(train_dataset) * 0.8)
             rw_data_size = len(train_dataset) - erm_data_size
@@ -114,7 +116,8 @@ def main(cfg):
             print_group_accuracies(val_dataset, model, dataset_name, device)
             algorithm_performance(train_loader, test_loader, test_dataset, model, dataset_name, device)
  
- 
+
+
 if __name__ == "__main__":
       main()
       

@@ -2,6 +2,9 @@ import numpy as np
 from torch.utils.data import DataLoader
 from datamodule.encoding import EncodingDataset
 
+#       ------------------------------------------------------------------------------------------------------------
+#       -------------------------------Representation Dataset Loading and Processing------------------------------
+#       ------------------------------------------------------------------------------------------------------------
 
 class DataModule:
     def __init__(self, train_path, test_path, val_path, batch_size, *args, **kwargs):

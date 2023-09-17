@@ -14,7 +14,7 @@ These papers serve as the basis for the training strategies incorporated into ou
 
 One of the major challenges in machine learning is achieving robust out-of-distribution (OOD) generalization. This challenge often arises due to the reliance on spurious features—patterns that are predictive of the class label in the training data distribution but not causally related to the target.
 
-![Dataset Example](C:/Users/User/Desktop/MyProjects/waterbirds_training/Figure_1.png)
+![Dataset Example](C:/Users/User/Desktop/MyProjects/Figure_1.png)
 
 The above figure provides a visual representation of our dataset, showcasing the images and their corresponding labels. This ongoing project, titled "Waterbirds Training," is aimed at addressing the challenge of OOD generalization through classification tasks on various distinct datasets. We employ three different models: CNN, Linear Model, and ResNet50 Model, to perform these classification tasks.
 

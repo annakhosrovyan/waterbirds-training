@@ -1,2 +1,0 @@
-2023-09-07 12:22:02,115 INFO    StreamThr :23460 [internal.py:wandb_internal():86] W&B internal server running at pid: 23460, started at: 2023-09-07 12:22:02.115983
-2023-09-07 12:22:02,130 DEBUG   HandlerThread:23460 [handler.py:handle_request():144] handle_request: status

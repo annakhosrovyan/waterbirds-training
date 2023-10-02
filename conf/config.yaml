@@ -1,7 +1,8 @@
 defaults:
-  - algorithm: jtt
+  - algorithm: afr
   - model: linear_classifier
-  - dataset: regnet_representation
+  - datamodule: regnet_representation
   - optimizer: adam
   - loss: cross_entropy
+  - device: cuda
   - override hydra/job_logging: custom

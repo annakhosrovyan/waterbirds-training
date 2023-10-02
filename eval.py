@@ -24,9 +24,11 @@ def check_accuracy(loader, model, device):
             num_correct += (predictions == y).sum()
             num_samples += predictions.size(0)
 
-        log.info(f"Got {num_correct} / {num_samples} with accuracy {float(num_correct)/float(num_samples)*100:.2f}")
+        log.info(f"Got {num_correct} / {num_samples} with accuracy {float(num_correct) / float(num_samples) * 100:.2f}")
 
     model.train()
+
+    return float(num_correct) / float(num_samples) * 100
 
 
 def check_group_accuracy(dataset, model, label, background, dataset_type, device):
@@ -48,7 +50,7 @@ def check_group_accuracy(dataset, model, label, background, dataset_type, device
             if pred == y:
                 group_correct += 1
     
-    log.info(f"Got {group_correct} / {group_total} with accuracy {float(group_correct)/float(group_total)*100:.2f}")
+    log.info(f"Got {group_correct} / {group_total} with accuracy {float(group_correct) / float(group_total) * 100:.2f}")
 
 
 #       ----------------------------------------------------------------------------------------
@@ -58,10 +60,10 @@ def check_group_accuracy(dataset, model, label, background, dataset_type, device
 
 def print_accuracy_for_loaders(train_loader, test_loader, model, device):
     log.info("Checking accuracy on Training Set")
-    check_accuracy(train_loader, model, device)
+    _ = check_accuracy(train_loader, model, device)
 
     log.info("Checking accuracy on Test Set")
-    check_accuracy(test_loader, model, device)
+    _ = check_accuracy(test_loader, model, device)
 
 
 def print_group_accuracies(dataset, model, dataset_type, device):

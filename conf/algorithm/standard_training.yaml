@@ -1,5 +1,8 @@
 name: standard_training
 
+params:
+  num_epochs: 3
+  
 data_format: 
   - vector
   - image

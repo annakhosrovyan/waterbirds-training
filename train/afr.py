@@ -1,35 +1,42 @@
 import torch
 from tqdm import tqdm  
+from hydra.utils import instantiate
+from torch.utils.data import DataLoader
+from train.standard import StandardTrainer
+from eval import check_accuracy
 
 import wandb
 wandb.login()
 
-class Trainer:
-    def __init__(self, model):
+class Trainer(StandardTrainer):
+    def __init__(self, model, datamodule):
+        super().__init__()
         self.model = model
+        self.datamodule = instantiate(datamodule)
 
-    def first_stage_training(self, model, num_epochs, train_loader, loss_function, optimizer, device, config = None):
+    def prep_data(self, batch_size, weight, device):
+        train_loader, val_loader, test_loader, train_dataset, val_dataset, test_dataset = self.datamodule.prepare_data()
+
+        erm_data_size = int(len(train_dataset) * 0.8)
+        rw_data_size = len(train_dataset) - erm_data_size
+       
+        erm_data, rw_data = torch.utils.data.random_split(train_dataset, [erm_data_size, rw_data_size])
+        erm_data_loader = DataLoader(erm_data, batch_size, shuffle = True)
+        weights = self.compute_afr_weights(self.model, erm_data, weight, device)
+        rw_data_loader = DataLoader(rw_data, batch_size, shuffle = True)
+
+        return erm_data_loader, rw_data_loader, val_loader, test_loader, train_dataset, val_dataset, test_dataset
+
+    def second_stage_training(self, model, num_epochs, train_loader, test_loader, loss_function, optimizer, weights, device, config = None):
+    # def second_stage_training(self, model, num_epochs, train_loader, test_loader, loss_function, optimizer, weights, scheduler, device, config = None):
         with wandb.init(config = config):
             config = wandb.config
 
-            for epoch in range(num_epochs):
-                for batch_idx, (data, targets, _) in enumerate(tqdm(train_loader)):
-                    data = data.to(device = device)
-                    targets = targets.to(device = device)
+            for param in model.parameters():
+                param.requires_grad= False
 
-                    scores = model(data)
-                    loss = loss_function(scores, targets)
-
-                    optimizer.zero_grad()
-                    loss.backward()
-        
-                    optimizer.step()
-                wandb.log({"loss": loss})
-
-
-    def second_stage_training(self, model, num_epochs, train_loader, loss_function, optimizer, weights, scheduler, device, config = None):
-        with wandb.init(config = config):
-            config = wandb.config
+            for param in model.fc2.parameters():
+                param.requires_grad = True
 
             for epoch in range(num_epochs):
                 for batch_idx, (data, targets, _) in enumerate(tqdm(train_loader)):
@@ -46,12 +53,13 @@ class Trainer:
         
                     optimizer.step()
 
-                wandb.log({"weighted_loss": weighted_loss})
+                accuracy = check_accuracy(test_loader, model, device)
+                wandb.log({"accuracy": accuracy})
 
-                scheduler.step(weighted_loss)
+                # scheduler.step(weighted_loss)
 
 
-    def compute_afr_weights(self, model, data, gamma, device):
+    def compute_afr_weights(self, model, data, weight, device):
         with torch.no_grad():
             erm_logits = []
             class_label = []
@@ -68,7 +76,7 @@ class Trainer:
             y_onehot = torch.zeros_like(erm_logits).scatter_(-1, class_label.unsqueeze(-1), 1).to(device = device)
             p_true = (p * y_onehot).sum(-1)
 
-            weights = (-gamma * p_true).exp()
+            weights = (-weight * p_true).exp()
             n_classes = torch.unique(y).numel()
 
             # class balancing

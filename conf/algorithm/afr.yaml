@@ -4,7 +4,9 @@ trainer:
   _target_: train.afr.Trainer
 
 params:
-  gamma: 20
-  num_epochs_for_final_model: 500
+  weight: 20
+  num_epochs: 3
+  num_epochs_for_final_model: 100
 
-data_format: vector
+data_format: 
+  - vector

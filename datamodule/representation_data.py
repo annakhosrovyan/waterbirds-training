@@ -2,9 +2,6 @@ import numpy as np
 from torch.utils.data import DataLoader
 from datamodule.encoding import EncodingDataset
 
-#       ------------------------------------------------------------------------------------------------------------
-#       -------------------------------Representation Dataset Loading and Processing------------------------------
-#       ------------------------------------------------------------------------------------------------------------
 
 class DataModule:
     def __init__(self, train_path, test_path, val_path, batch_size, *args, **kwargs):
@@ -13,10 +10,13 @@ class DataModule:
         self.val_path = val_path
         self.batch_size = batch_size
 
+
     def get_data(self, path):
         data = np.load(path)
         x, y, c = data["embeddings"], data["labels"], data["domains"]
+        
         return x.squeeze(), y.squeeze(), c.squeeze()
+
 
     def prepare_data(self):
         train_x, train_y, train_c = self.get_data(self.train_path)

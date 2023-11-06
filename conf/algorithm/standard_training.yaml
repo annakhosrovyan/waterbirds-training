@@ -1,8 +1,11 @@
 name: standard_training
 
+trainer:
+  _target_: train.standard.StandardTrainer
+
 params:
   num_epochs: 3
   
-data_format: 
+data_formats: 
   - vector
   - image

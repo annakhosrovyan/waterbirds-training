@@ -1,15 +1,16 @@
 name: resnet50_representation
 
-_target_:  datamodule.representation_data.DataModule
+data_config:
+  _target_:  datamodule.representation_data.DataModule
 
-in_features: 2048
-batch_size: 64
-num_classes: 2
+  in_features: 2048
+  batch_size: 8
+  num_classes: 2
 
-train_path: ${oc.env:DATA_ROOT}/resnet50/train.npz
-test_path: ${oc.env:DATA_ROOT}/resnet50/test.npz
-val_path: ${oc.env:DATA_ROOT}/resnet50/val.npz
+  train_path: ${oc.env:DATA_ROOT}/resnet50/train.npz
+  test_path: ${oc.env:DATA_ROOT}/resnet50/test.npz
+  val_path: ${oc.env:DATA_ROOT}/resnet50/val.npz
 
-data_format: 
+data_formats: 
   - vector
 

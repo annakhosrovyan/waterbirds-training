@@ -1,13 +1,8 @@
 import torch
 import torchvision.transforms as transforms
-from torch.utils.data import Dataset, DataLoader
 
 from wilds import get_dataset
 from wilds.common.data_loaders import get_train_loader, get_eval_loader
-
-#       ------------------------------------------------------------------------------------------------------------
-#       -------------------------------Waterbirds Image Dataset Loading and Processing------------------------------
-#       ------------------------------------------------------------------------------------------------------------
 
 
 class DataModule:
@@ -16,9 +11,12 @@ class DataModule:
         self.batch_size = batch_size
         self.download = download
 
+
     def get_dataset(self): 
         dataset = get_dataset(root_dir = self.root_dir, dataset = "waterbirds", download = self.download)
+      
         return dataset
+
 
     def get_train_data(self):
         dataset = self.get_dataset() 
@@ -28,8 +26,10 @@ class DataModule:
                 [transforms.Resize((448, 448)), transforms.ToTensor()]
             ),
         )
+
         return train_dataset
     
+
     def get_val_data(self):
         dataset = self.get_dataset()
         val_dataset = dataset.get_subset(
@@ -38,7 +38,9 @@ class DataModule:
                 [transforms.Resize((448, 448)), transforms.ToTensor()]
             ),
         )
+
         return val_dataset
+
 
     def get_test_data(self):
         dataset = self.get_dataset()
@@ -48,7 +50,9 @@ class DataModule:
                 [transforms.Resize((448, 448)), transforms.ToTensor()]
             ),
         )
+
         return test_dataset
+
 
     def prepare_data(self):
         dataset = self.get_dataset()

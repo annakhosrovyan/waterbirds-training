@@ -3,7 +3,7 @@ name: resnet50
 network_config:
   _target_: torchvision.models.resnet50
   weights: ResNet50_Weights.IMAGENET1K_V1
-  num_classes: ${datamodule.num_classes}
+  num_classes: ${datamodule.data_config.num_classes}
 
-data_format: 
+data_formats: 
   - image

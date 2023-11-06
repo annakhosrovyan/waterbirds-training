@@ -50,26 +50,34 @@ Here, we present the performance of our models on various representations. Pleas
 ### ResNet50 Representation
 
 |   |Accuracy (%)|WGA (%)|
-| --- | --- | --- |
-| **Standard** | 86.35% / 84.41% | 63.71% / 63.55% |
-| **JTT** | 85.31% | 68.54% |
-| **AFR** | 84.33% | 70.86% |
+| :---: | :---: | :---: |
+| **Standard** | 86.35 | 63.71 |
+| **JTT** | 85.31 | 68.54 |
+
+|   |Accuracy (%)|WGA (%)|
+| :---: | :---: | :---: |
+| **Standard** | 86.88 | 59.81 |
+| **AFR** | 85.54 | 65.42 |
+
 
 ### RegNet Representation
 
-| |Accuracy|WGA|
-| --- | --- | --- |
-| **Standard** |   |   |
-| **JTT** |   |   |
-| **AFR** |   |   |
+|   |Accuracy (%)|WGA (%)|
+| :---: | :---: | :---: |
+| **Standard** | 93.25 | 75.39 |
+| **JTT** | 93.82 | 87.38 |
+
+|   |Accuracy (%)|WGA (%)|
+| :---: | :---: | :---: |
+| **Standard** | 95.20 | 81.00 |
+| **AFR** | 94.53 | 83.49 |
 
 ### DINOv2 Representation 
 
-| |Accuracy|WGA|
-| --- | --- | --- |
-| **Standard** |   |   |
-| **JTT** |   |   |
-| **AFR** |   |   |
+|   |Accuracy (%)|WGA (%)|
+| :---: | :---: | :---: |
+| **Standard** | 96.13 | 90.03 |
+| **JTT** | 96.19 | 91.28 |
 
 
 ## Contributions

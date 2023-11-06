@@ -1,8 +1,10 @@
 defaults:
   - algorithm: afr
   - model: linear_classifier
-  - datamodule: regnet_representation
+  - datamodule: resnet50_representation
   - optimizer: adam
   - loss: cross_entropy
-  - device: cuda
+  - scheduler: ReduceLROnPlateau
   - override hydra/job_logging: custom
+
+device: cuda:0

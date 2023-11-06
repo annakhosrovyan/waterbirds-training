@@ -1,16 +1,17 @@
 name: dino_v2_representation
 
-_target_:  datamodule.representation_data.DataModule
+data_config: 
+  _target_:  datamodule.representation_data.DataModule
 
-in_features: 768
-batch_size: 32
-num_classes: 2
+  in_features: 768
+  batch_size: 64
+  num_classes: 2
 
-train_path: ${oc.env:DATA_ROOT}/dino_v2/train.npz
-test_path: ${oc.env:DATA_ROOT}/dino_v2/test.npz
-val_path: ${oc.env:DATA_ROOT}/dino_v2/val.npz
+  train_path: ${oc.env:DATA_ROOT}/dino_v2/train.npz
+  test_path: ${oc.env:DATA_ROOT}/dino_v2/test.npz
+  val_path: ${oc.env:DATA_ROOT}/dino_v2/val.npz
 
-data_format: 
+data_formats: 
   - vector
 
 

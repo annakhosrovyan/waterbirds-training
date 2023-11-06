@@ -24,11 +24,12 @@ def check_accuracy(loader, model, device):
             num_correct += (predictions == y).sum()
             num_samples += predictions.size(0)
 
-        log.info(f"Got {num_correct} / {num_samples} with accuracy {float(num_correct) / float(num_samples) * 100:.2f}")
+        accuracy = num_correct / num_samples * 100
+        log.info(f"Got {num_correct} / {num_samples} with accuracy {accuracy:.2f}")
 
     model.train()
 
-    return float(num_correct) / float(num_samples) * 100
+    return accuracy
 
 
 def check_group_accuracy(dataset, model, label, background, dataset_type, device):
@@ -49,9 +50,11 @@ def check_group_accuracy(dataset, model, label, background, dataset_type, device
             group_total += 1
             if pred == y:
                 group_correct += 1
+            
+    accuracy = group_correct / group_total * 100
+    log.info(f"Got {group_correct} / {group_total} with accuracy {accuracy:.2f}")
     
-    log.info(f"Got {group_correct} / {group_total} with accuracy {float(group_correct) / float(group_total) * 100:.2f}")
-
+    return accuracy
 
 #       ----------------------------------------------------------------------------------------
 #       -------------------------------Accuracy Logging Functions-------------------------------
@@ -60,10 +63,10 @@ def check_group_accuracy(dataset, model, label, background, dataset_type, device
 
 def print_accuracy_for_loaders(train_loader, test_loader, model, device):
     log.info("Checking accuracy on Training Set")
-    _ = check_accuracy(train_loader, model, device)
+    check_accuracy(train_loader, model, device)
 
     log.info("Checking accuracy on Test Set")
-    _ = check_accuracy(test_loader, model, device)
+    check_accuracy(test_loader, model, device)
 
 
 def print_group_accuracies(dataset, model, dataset_type, device):
@@ -80,13 +83,16 @@ def print_group_accuracies(dataset, model, dataset_type, device):
     check_group_accuracy(dataset, model, 0, 1, dataset_type, device)
 
 
-def standard_model_performance(train_loader, test_loader, dataset, model, dataset_type, device):
-    log.info("Evaluate standard model performance\n")
+def performance(train_loader, test_loader, dataset, model, dataset_type, device):
     print_accuracy_for_loaders(train_loader, test_loader, model, device)
     print_group_accuracies(dataset, model, dataset_type, device)
 
+
+def standard_model_performance(train_loader, test_loader, dataset, model, dataset_type, device):
+    log.info("\nEvaluate standard model performance\n")
+    performance(train_loader, test_loader, dataset, model, dataset_type, device)
+    
             
 def algorithm_performance(train_loader, test_loader, dataset, model, dataset_type, device):
     log.info("\nEvaluate Algorithm performance\n")
-    print_accuracy_for_loaders(train_loader, test_loader, model, device)
-    print_group_accuracies(dataset, model, dataset_type, device)
+    performance(train_loader, test_loader, dataset, model, dataset_type, device)

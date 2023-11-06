@@ -4,9 +4,9 @@ trainer:
   _target_: train.jtt.Trainer
 
 params:
-  weight: 120
-  num_epochs: 3
-  num_epochs_for_final_model: 700
+  lambda_up: 70
+  num_epochs: 2
+  num_epochs_for_final_model: 30
 
-data_format: 
+data_formats: 
   - vector

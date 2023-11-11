@@ -1,7 +1,7 @@
 defaults:
-  - algorithm: afr
+  - algorithm: jtt
   - model: linear_classifier
-  - datamodule: resnet50_representation
+  - datamodule: dino_v2_representation
   - optimizer: adam
   - loss: cross_entropy
   - scheduler: ReduceLROnPlateau

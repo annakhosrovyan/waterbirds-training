@@ -4,7 +4,7 @@ data_config:
   _target_:  datamodule.representation_data.DataModule
 
   in_features: 768
-  batch_size: 64
+  batch_size: 8
   num_classes: 2
 
   train_path: ${oc.env:DATA_ROOT}/dino_v2/train.npz

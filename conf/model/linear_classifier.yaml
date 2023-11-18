@@ -4,6 +4,3 @@ network_config:
   _target_: model.linear_classifier.Model
   in_features: ${datamodule.data_config.in_features}  
   num_classes: ${datamodule.data_config.num_classes}
-
-data_formats: 
-  - vector

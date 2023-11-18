@@ -1,9 +1,0 @@
-name: cnn 
-
-network_config: 
-  _target_: model.cnn.Model
-  in_channel:  ${datamodule.data_config.in_channel}
-  num_classes: ${datamodule.data_config.num_classes}
-
-data_formats: 
-  - image

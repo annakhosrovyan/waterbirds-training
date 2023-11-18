@@ -1,10 +1,21 @@
 import numpy as np
+import pytorch_lightning as pl
+
 from torch.utils.data import DataLoader
 from datamodule.encoding import EncodingDataset
 
 
-class DataModule:
-    def __init__(self, train_path, test_path, val_path, batch_size, *args, **kwargs):
+class DataModule(pl.LightningDataModule):
+    def __init__(self, 
+                 train_path, 
+                 test_path, 
+                 val_path, 
+                 batch_size, 
+                 *args, **kwargs
+                 ):
+        
+        super().__init__()
+
         self.train_path = train_path
         self.test_path = test_path
         self.val_path = val_path
@@ -18,17 +29,37 @@ class DataModule:
         return x.squeeze(), y.squeeze(), c.squeeze()
 
 
-    def prepare_data(self):
+    def setup(self, stage = None):
         train_x, train_y, train_c = self.get_data(self.train_path)
         test_x, test_y, test_c = self.get_data(self.test_path)
         val_x, val_y, val_c = self.get_data(self.val_path)
 
-        train_dataset = EncodingDataset(train_x, train_y, train_c)
-        val_dataset = EncodingDataset(val_x, val_y, val_c)
-        test_dataset = EncodingDataset(test_x, test_y, test_c)
+        self.train_dataset = EncodingDataset(train_x, train_y, train_c)
+        self.val_dataset = EncodingDataset(val_x, val_y, val_c)
+        self.test_dataset = EncodingDataset(test_x, test_y, test_c)
 
-        train_loader = DataLoader(train_dataset, self.batch_size, shuffle = True)
-        val_loader = DataLoader(val_dataset, self.batch_size, shuffle = False)
-        test_loader = DataLoader(test_dataset, self.batch_size, shuffle = False)
+        return self.train_dataset, self.val_dataset, self.test_dataset
+    
 
-        return train_loader, val_loader, test_loader, train_dataset, val_dataset, test_dataset
+    def train_dataloader(self):
+        return DataLoader(
+            dataset = self.train_dataset, 
+            batch_size = self.batch_size, 
+            shuffle = True
+            )
+    
+
+    def val_dataloader(self):
+        return DataLoader(
+            dataset = self.val_dataset, 
+            batch_size = self.batch_size, 
+            shuffle = False
+            )
+    
+
+    def test_dataloader(self):
+        return DataLoader(
+            dataset = self.test_dataset, 
+            batch_size = self.batch_size, 
+            shuffle = False
+            )

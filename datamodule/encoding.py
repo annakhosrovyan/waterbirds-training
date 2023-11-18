@@ -7,8 +7,10 @@ class EncodingDataset(Dataset):
         self.y = torch.from_numpy(y)
         self.c = torch.from_numpy(c)
 
+
     def __len__(self):
         return len(self.x)
+
 
     def __getitem__(self, index):
         return self.x[index], self.y[index], self.c[index]

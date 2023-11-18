@@ -1,0 +1,3 @@
+_target_: algorithm.erm.ERM
+
+num_epochs: 3

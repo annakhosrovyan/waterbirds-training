@@ -5,4 +5,4 @@ __pycache__
 /resnet50
 /wandb
 /outputs
-
+/lightning_logs

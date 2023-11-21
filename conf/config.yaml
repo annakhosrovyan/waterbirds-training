@@ -1,5 +1,5 @@
 defaults:
-  - algorithm: afr
+  - algorithm: jtt
   - model: linear_classifier
   - datamodule: regnet_representation
   - optimizer: adam
@@ -7,4 +7,4 @@ defaults:
   - scheduler: ReduceLROnPlateau
   - override hydra/job_logging: custom
 
-device: cuda:0
+device: cuda

@@ -1,7 +1,7 @@
 name: dino_v2_representation
 
 data_config: 
-  _target_:  datamodule.representation_data.DataModule
+  _target_:  datamodule.encoding.EncodingDataModule
 
   in_features: 768
   batch_size: 8

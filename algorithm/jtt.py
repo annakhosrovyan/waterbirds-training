@@ -26,11 +26,11 @@ class JTT(ERM):
 
         ERM.train(self)
 
-        trainer = pl.Trainer(max_epochs=5,
-                             callbacks= PrintingCallback())
+        trainer = pl.Trainer(accelerator = self._device,
+                             max_epochs = self._cfg.algorithm.num_epochs_for_final_model,
+                             callbacks = PrintingCallback())
 
         trainer.fit(model = self.model, train_dataloaders = second_stage_data_loader)
-        trainer.validate(dataloaders = self.data_module.val_dataloader())
         trainer.test(dataloaders = self.data_module.test_dataloader())
 
         *_, test_dataset = self.data_module.setup()

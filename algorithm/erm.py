@@ -38,11 +38,11 @@ class ERM(pl.LightningModule):
 
         
     def train(self):
-        trainer = pl.Trainer(max_epochs = self._cfg.algorithm.num_epochs,
+        trainer = pl.Trainer(accelerator = self._device,
+                             max_epochs = self._cfg.algorithm.num_epochs,
                              callbacks = PrintingCallback())
 
         trainer.fit(model = self.model, datamodule = self.data_module)
-        trainer.validate(dataloaders = self.data_module.val_dataloader())
         trainer.test(dataloaders = self.data_module.test_dataloader())
         
         *_, test_dataset = self.data_module.setup()

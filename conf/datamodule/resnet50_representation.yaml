@@ -1,7 +1,7 @@
 name: resnet50_representation
 
 data_config:
-  _target_:  datamodule.encoding.EncodingDataModule
+  _target_:  src.datamodule.EncodingDataModule
 
   in_features: 2048
   batch_size: 8

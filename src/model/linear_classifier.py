@@ -5,7 +5,7 @@ import pytorch_lightning as pl
 from hydra.utils import instantiate
 
   
-class Model(pl.LightningModule):
+class LinearClassifier(pl.LightningModule):
     def __init__(self, 
                  in_features, 
                  num_classes, 

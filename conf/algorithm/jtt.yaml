@@ -1,4 +1,4 @@
-_target_: algorithm.jtt.JTT
+_target_:  src.algorithm.JTT
 
 lambda_up: 10
 num_epochs: 3

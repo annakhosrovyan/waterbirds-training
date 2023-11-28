@@ -2,7 +2,7 @@ import numpy as np
 import pytorch_lightning as pl
 
 from torch.utils.data import DataLoader
-from datamodule.dataset.encoding import EncodingDataset
+from src.datamodule.dataset.encoding import EncodingDataset
 
 
 class EncodingDataModule(pl.LightningDataModule):

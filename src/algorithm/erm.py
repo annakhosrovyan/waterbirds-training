@@ -1,8 +1,6 @@
 import pytorch_lightning as pl
 
-from pytorch_lightning import Trainer
-from callbacks import PrintingCallback
-from eval import print_group_accuracies
+from src.utils import print_group_accuracies, PrintingCallback
 
 
 class ERM(pl.LightningModule):

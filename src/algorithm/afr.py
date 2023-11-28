@@ -3,10 +3,9 @@ import logging
 import pytorch_lightning as pl
 
 from tqdm import tqdm  
-from algorithm.erm import ERM
+from src.algorithm.erm import ERM
 from torch.utils.data import DataLoader
-from callbacks import PrintingCallback
-from eval import print_group_accuracies
+from src.utils import PrintingCallback, print_group_accuracies
 
 log = logging.getLogger(__name__)
 

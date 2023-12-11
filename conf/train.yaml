@@ -11,7 +11,7 @@ defaults:
   - datamodule: dino_v2_representation
   - optimizer: adam
   - loss: cross_entropy
-  - scheduler: ReduceLROnPlateau
+  - scheduler: plateau
   - override hydra/job_logging: custom
   - _self_
 

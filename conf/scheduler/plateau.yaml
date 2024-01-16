@@ -4,4 +4,4 @@ factor: 0.1
 patience: 5
 verbose: True
 
-monitor: train_loss
+monitor: val_loss

@@ -1,4 +1,4 @@
-name: train
+name: test
 seed: 0
 print_config: True
 ignore_warnings: True

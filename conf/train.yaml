@@ -1,0 +1,22 @@
+name: train
+seed: 0
+print_config: True
+ignore_warnings: True
+
+device: cuda
+
+defaults:
+  - algorithm: jtt
+  - model: linear_classifier
+  - datamodule: dino_v2_representation
+  - optimizer: adam
+  - loss: cross_entropy
+  - scheduler: plateau
+  - override hydra/job_logging: custom
+  - _self_
+
+hydra:
+  run:
+    dir: ${oc.env:OUTPUT_DIR}/runs/${name}/${now:%Y-%m-%d_%H-%M-%S}
+  job:
+    chdir: True

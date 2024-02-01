@@ -1,6 +1,7 @@
 import torch
 from torch.utils.data import Dataset
 
+
 class EncodingDataset(Dataset):
     def __init__(self, x, y, c):
         self.x = torch.from_numpy(x)

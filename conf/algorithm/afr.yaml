@@ -1,12 +1,6 @@
-name: afr
+_target_: src.algorithm.AFR
 
-trainer:
-  _target_: train.afr.Trainer
+gamma: 1
+num_epochs: 20
+num_epochs_for_final_model: 20
 
-params:
-  gamma: 1
-  num_epochs: 20
-  num_epochs_for_final_model: 20
-
-data_formats: 
-  - vector

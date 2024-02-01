@@ -1,7 +1,7 @@
 name: resnet50_representation
 
 data_config:
-  _target_:  datamodule.representation_data.DataModule
+  _target_:  src.datamodule.EncodingDataModule
 
   in_features: 2048
   batch_size: 8
@@ -10,7 +10,3 @@ data_config:
   train_path: ${oc.env:DATA_ROOT}/resnet50/train.npz
   test_path: ${oc.env:DATA_ROOT}/resnet50/test.npz
   val_path: ${oc.env:DATA_ROOT}/resnet50/val.npz
-
-data_formats: 
-  - vector
-

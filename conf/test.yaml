@@ -6,6 +6,7 @@ ignore_warnings: True
 device: cuda
 
 defaults:
+  - training_type: standard
   - first_model: erm
   - second_model: afr
   - datamodule: dino_v2_representation

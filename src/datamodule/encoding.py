@@ -23,20 +23,12 @@ class EncodingDataModule(pl.LightningDataModule):
                  ):
         super().__init__()
         self._stage = TrainingStage.ERM
-        self._cfg = None
 
         self.train_path = train_path
         self.test_path = test_path
         self.val_path = val_path
         self.batch_size = batch_size
 
-    @property
-    def cfg(self):
-        return self._cfg
-    
-    @cfg.setter
-    def cfg(self, value):
-        self._cfg = value
 
     def get_data(self, path: str) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         data = np.load(path)
@@ -69,6 +61,9 @@ class EncodingDataModule(pl.LightningDataModule):
 
     def train_dataloader(self) -> DataLoader:
         data = self.first_stage_dataset if self._stage == TrainingStage.ERM else self.second_stage_dataset
+        if self.cfg.training_type.name == 'standard':
+            data = torch.utils.data.ConcatDataset([self.first_stage_dataset, self.second_stage_dataset])
+            
         return DataLoader(
             dataset=data,
             batch_size=self.batch_size,
@@ -104,7 +99,7 @@ class EncodingDataModule(pl.LightningDataModule):
         logits = torch.cat(logits)
         ys = torch.cat(ys)
 
-        weights = self.compute_afr_weights(logits, ys, gamma=self._cfg.second_model.gamma) #todo
+        weights = self.compute_afr_weights(logits, ys, self.cfg.second_model.gamma)
 
     @staticmethod
     def compute_afr_weights(erm_logits, class_label, gamma) -> torch.Tensor:

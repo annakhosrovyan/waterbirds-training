@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn  
 import torchmetrics
 import pytorch_lightning as pl
+import copy
 
 from hydra.utils import instantiate
 
@@ -9,6 +10,7 @@ from hydra.utils import instantiate
 class AFR(pl.LightningModule):
     def __init__(self, 
                  datamodule,
+                 first_model,
                  in_features, 
                  num_classes, 
                  loss_fn, 
@@ -19,14 +21,12 @@ class AFR(pl.LightningModule):
         super().__init__()
 
         self.datamodule = datamodule
-        self.fc1 = nn.Linear(in_features, 100)
-        self.fc2 = nn.Linear(100, num_classes)
+        self.fc1 = copy.deepcopy(first_model.fc1) 
+        self.fc2 = copy.deepcopy(first_model.fc2) 
         
         self.loss_fn = loss_fn
         self.optimizer_config = optimizer_config
         self.scheduler_config = scheduler_config
-
-        self._cfg = None
 
         self.accuracy = torchmetrics.Accuracy(task = 'binary', 
                                               num_classes = num_classes)
@@ -43,16 +43,7 @@ class AFR(pl.LightningModule):
         self.worst_correct = torch.tensor(0)
         self.val_accuracy = 0
         self.test_accuracy = 0
-
-
-    @property
-    def cfg(self):
-        return self._cfg
-    
-    @cfg.setter
-    def cfg(self, value):
-        self._cfg = value
-    
+        
     def forward(self, x):
         x = self.fc1(x)
         x = self.fc2(x)
@@ -62,7 +53,7 @@ class AFR(pl.LightningModule):
     def training_step(self, batch, batch_idx):
         data, labels, weights = batch
         preds = self(data)
-        loss = self.loss_afr(preds, labels, weights, gamma=self._cfg.second_model.gamma)
+        loss = self.loss_afr(preds, labels, weights)
         self.log('train_loss', loss, on_step=True, on_epoch=False, prog_bar=True)
         
         return loss
@@ -71,7 +62,7 @@ class AFR(pl.LightningModule):
         data, labels, backgrounds = batch
 
         preds = self(data)
-        loss = self.loss_afr(preds, labels, torch.ones_like(labels), gamma = self._cfg.second_model.gamma)
+        loss = self.loss_afr(preds, labels, torch.ones_like(labels))
         preds = torch.argmax(preds, dim=1)
         accuracy_2 = (preds == labels).float().mean()
         
@@ -93,8 +84,7 @@ class AFR(pl.LightningModule):
     def test_step(self, batch, batch_idx):
         data, labels, backgrounds = batch
         preds = self(data)
-        loss = self.loss_afr(preds, labels, torch.ones_like(labels), 
-                             gamma = self._cfg.second_model.gamma)
+        loss = self.loss_afr(preds, labels, torch.ones_like(labels))
         preds = torch.argmax(preds, dim=1)
         accuracy_2 = (preds == labels).float().mean()
         
@@ -114,7 +104,7 @@ class AFR(pl.LightningModule):
         self.log('test_WGA_accuracy', torch.tensor(self.test_accuracy), on_epoch=True, prog_bar=True)
         self.val_accuracy = 0
 
-    def loss_afr(self, preds, labels, weights, gamma):
+    def loss_afr(self, preds, labels, weights):
         pre_loss = nn.CrossEntropyLoss(reduction="none")
         weighted_afr_loss = torch.sum(weights * pre_loss(preds, labels))
  
@@ -122,13 +112,13 @@ class AFR(pl.LightningModule):
     
     def configure_optimizers(self):
         optimizer_target = self.optimizer_config.pop('target')
-        optimizer = instantiate(self.optimizer_config, params = self.parameters(), _target_ = optimizer_target)
+        optimizer = instantiate(self.optimizer_config, params=self.parameters(), _target_=optimizer_target)
 
         monitor = self.scheduler_config.monitor
         del self.scheduler_config.monitor
 
         scheduler_target = self.scheduler_config.pop('target')
-        scheduler = instantiate(self.scheduler_config, optimizer = optimizer, _target_ = scheduler_target)
+        scheduler = instantiate(self.scheduler_config, optimizer=optimizer, _target_=scheduler_target)
         
         self.optimizer_config.update({'target': optimizer_target})  # for second stage
         self.scheduler_config.update({'monitor': monitor, 'target': scheduler_target})

@@ -4,3 +4,5 @@ num_classes: ${datamodule.data_config.num_classes}
   
 gamma: 1
 num_epochs: 1
+
+weights_path: ${oc.env:WEIGHTS_DIR}/second_model.pth

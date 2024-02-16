@@ -10,14 +10,14 @@ def test(cfg: DictConfig) -> None:
     device = (torch.device("cuda" if torch.cuda.is_available() else "cpu")
               if cfg.device == "flexible" else cfg.device)
 
-    datamodule = instantiate(cfg.datamodule.data_config)
-    datamodule.cfg = cfg
+    datamodule = instantiate(cfg.datamodule.data_config,
+                             device=device)
 
     first_model = instantiate(cfg.first_model,
-                        loss_fn=cfg.loss,
-                        optimizer_config=cfg.optimizer,
-                        scheduler_config=cfg.scheduler
-                        ).to(device)
+                              loss_fn=cfg.loss,
+                              optimizer_config=cfg.optimizer,
+                              scheduler_config=cfg.scheduler
+                              ).to(device)
     first_model.load_state_dict(torch.load(cfg.first_model.weights_path))
     first_model.eval()
 
@@ -25,9 +25,7 @@ def test(cfg: DictConfig) -> None:
                                accelerator=device)
     first_trainer.test(model=first_model, datamodule=datamodule)
 
-    if cfg.training_type.name != 'standard':
-
-        datamodule.change_to_2nd_stage(model=first_model)
+    if cfg.training_type != 'standard':
 
         second_model = instantiate(cfg.second_model,
                                 first_model=first_model,

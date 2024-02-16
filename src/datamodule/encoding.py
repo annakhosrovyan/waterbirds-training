@@ -19,6 +19,8 @@ class EncodingDataModule(pl.LightningDataModule):
                  test_path: str,
                  val_path: str,
                  batch_size: int,
+                 training_type: str,
+                 device: str,
                  *args, **kwargs
                  ):
         super().__init__()
@@ -29,6 +31,8 @@ class EncodingDataModule(pl.LightningDataModule):
         self.val_path = val_path
         self.batch_size = batch_size
 
+        self.training_type = training_type
+        self.device = device
 
     def get_data(self, path: str) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         data = np.load(path)
@@ -61,7 +65,7 @@ class EncodingDataModule(pl.LightningDataModule):
 
     def train_dataloader(self) -> DataLoader:
         data = self.first_stage_dataset if self._stage == TrainingStage.ERM else self.second_stage_dataset
-        if self.cfg.training_type.name == 'standard':
+        if self.training_type == 'standard':
             data = torch.utils.data.ConcatDataset([self.first_stage_dataset, self.second_stage_dataset])
             
         return DataLoader(
@@ -85,21 +89,23 @@ class EncodingDataModule(pl.LightningDataModule):
             shuffle=False
         )
 
-    def change_to_2nd_stage(self, model):
+    def change_to_2nd_stage(self, model, gamma):
         self._stage = TrainingStage.REWEIGTING
 
         model.eval()
-        model.cuda()
+        model.to(self.device)
         logits = []
         ys = []
         for x, y, c in self.train_dataloader():
-            y_hat = model(x.to("cuda")).detach().cpu()
+            y_hat = model(x.to(self.device)).detach().cpu()
             logits.append(y_hat)
             ys.append(y)
         logits = torch.cat(logits)
         ys = torch.cat(ys)
 
-        weights = self.compute_afr_weights(logits, ys, self.cfg.second_model.gamma)
+        weights = self.compute_afr_weights(logits, ys, gamma)
+
+        return weights
 
     @staticmethod
     def compute_afr_weights(erm_logits, class_label, gamma) -> torch.Tensor:

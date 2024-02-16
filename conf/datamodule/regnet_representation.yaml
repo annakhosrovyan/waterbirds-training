@@ -10,3 +10,5 @@ data_config:
   train_path: ${oc.env:DATA_ROOT}/swag_pretrained_regnety_128gf_in1k/train.npz
   test_path: ${oc.env:DATA_ROOT}/swag_pretrained_regnety_128gf_in1k/test.npz
   val_path: ${oc.env:DATA_ROOT}/swag_pretrained_regnety_128gf_in1k/val.npz
+
+  training_type: ${training_type.name}  

@@ -11,11 +11,11 @@ class AFR(pl.LightningModule):
     def __init__(self, 
                  datamodule,
                  first_model,
-                 in_features, 
                  num_classes, 
                  loss_fn, 
                  optimizer_config, 
-                 scheduler_config, 
+                 scheduler_config,
+                 gamma, 
                  *args, **kwargs):
         
         super().__init__()
@@ -44,6 +44,8 @@ class AFR(pl.LightningModule):
         self.val_accuracy = 0
         self.test_accuracy = 0
         
+        self.weights = self.datamodule.change_to_2nd_stage(model=first_model, gamma=gamma) 
+
     def forward(self, x):
         x = self.fc1(x)
         x = self.fc2(x)
@@ -51,9 +53,12 @@ class AFR(pl.LightningModule):
         return x
     
     def training_step(self, batch, batch_idx):
-        data, labels, weights = batch
+        data, labels, _ = batch
+        batch_weights = self.weights[batch_idx * self.datamodule.batch_size:
+                        (batch_idx + 1) * self.datamodule.batch_size].to(self.datamodule.device) 
+
         preds = self(data)
-        loss = self.loss_afr(preds, labels, weights)
+        loss = self.loss_afr(preds, labels, batch_weights)
         self.log('train_loss', loss, on_step=True, on_epoch=False, prog_bar=True)
         
         return loss

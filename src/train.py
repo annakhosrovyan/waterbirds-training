@@ -14,8 +14,8 @@ def train(cfg: DictConfig) -> None:
     device = (torch.device("cuda" if torch.cuda.is_available() else "cpu")
               if cfg.device == "flexible" else cfg.device)
 
-    datamodule = instantiate(cfg.datamodule.data_config)
-    datamodule.cfg = cfg
+    datamodule = instantiate(cfg.datamodule.data_config,
+                             device=device)
     
     first_model = instantiate(cfg.first_model,
                               loss_fn=cfg.loss,
@@ -36,7 +36,7 @@ def train(cfg: DictConfig) -> None:
     print_group_accuracies(test_dataset, first_model,
                            cfg.datamodule.name)
     
-    if cfg.training_type.name != 'standard':
+    if datamodule.training_type != 'standard':
     
         second_model = instantiate(cfg.second_model,
                                 first_model=first_model,
@@ -45,8 +45,6 @@ def train(cfg: DictConfig) -> None:
                                 scheduler_config=cfg.scheduler,
                                 datamodule=datamodule
                                 ).to(device)
-
-        datamodule.change_to_2nd_stage(model=first_model)
 
         second_trainer = pl.Trainer(max_epochs=cfg.second_model.num_epochs, accelerator=device,
                                     callbacks=PrintingCallback(),

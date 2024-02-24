@@ -10,8 +10,7 @@ def test(cfg: DictConfig) -> None:
     device = (torch.device("cuda" if torch.cuda.is_available() else "cpu")
               if cfg.device == "flexible" else cfg.device)
 
-    datamodule = instantiate(cfg.datamodule.data_config,
-                             device=device)
+    datamodule = instantiate(cfg.datamodule.data_config)
 
     first_model = instantiate(cfg.first_model,
                               loss_fn=cfg.loss,

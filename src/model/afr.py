@@ -55,7 +55,7 @@ class AFR(pl.LightningModule):
     def training_step(self, batch, batch_idx):
         data, labels, _ = batch
         batch_weights = self.weights[batch_idx * self.datamodule.batch_size:
-                        (batch_idx + 1) * self.datamodule.batch_size].to(self.datamodule.device) 
+                        (batch_idx + 1) * self.datamodule.batch_size].to("cuda") 
 
         preds = self(data)
         loss = self.loss_afr(preds, labels, batch_weights)

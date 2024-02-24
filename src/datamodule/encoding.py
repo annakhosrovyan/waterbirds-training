@@ -20,7 +20,6 @@ class EncodingDataModule(pl.LightningDataModule):
                  val_path: str,
                  batch_size: int,
                  training_type: str,
-                 device: str,
                  *args, **kwargs
                  ):
         super().__init__()
@@ -32,7 +31,6 @@ class EncodingDataModule(pl.LightningDataModule):
         self.batch_size = batch_size
 
         self.training_type = training_type
-        self.device = device
 
     def get_data(self, path: str) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         data = np.load(path)
@@ -93,11 +91,11 @@ class EncodingDataModule(pl.LightningDataModule):
         self._stage = TrainingStage.REWEIGTING
 
         model.eval()
-        model.to(self.device)
+        model.cuda()
         logits = []
         ys = []
         for x, y, c in self.train_dataloader():
-            y_hat = model(x.to(self.device)).detach().cpu()
+            y_hat = model(x.to("cuda")).detach().cpu()
             logits.append(y_hat)
             ys.append(y)
         logits = torch.cat(logits)

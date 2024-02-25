@@ -10,3 +10,5 @@ data_config:
   train_path: ${oc.env:DATA_ROOT}/resnet50/train.npz
   test_path: ${oc.env:DATA_ROOT}/resnet50/test.npz
   val_path: ${oc.env:DATA_ROOT}/resnet50/val.npz
+
+  training_type: ${training_type.name}  

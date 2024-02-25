@@ -5,7 +5,7 @@ import pytorch_lightning as pl
 from hydra.utils import instantiate
 
   
-class LinearClassifier(pl.LightningModule):
+class ERM(pl.LightningModule):
     def __init__(self, 
                  in_features, 
                  num_classes, 
@@ -23,8 +23,8 @@ class LinearClassifier(pl.LightningModule):
         self.optimizer_config = optimizer_config
         self.scheduler_config = scheduler_config
 
-        self.accuracy = torchmetrics.Accuracy(task = 'binary', 
-                                              num_classes = num_classes)
+        self.accuracy = torchmetrics.Accuracy(task='binary', 
+                                              num_classes=num_classes)
 
     def forward(self, x):
         x = self.fc1(x)
@@ -32,14 +32,12 @@ class LinearClassifier(pl.LightningModule):
         
         return x
 
-
     def step(self, batch, batch_idx):
         x, y, _ = batch
         scores = self(x)
         loss = self.loss_fn(scores, y)
         
         return loss, scores, y
-
 
     def training_step(self, train_batch, batch_idx):
         loss, scores, y = self.step(train_batch, batch_idx)
@@ -55,7 +53,6 @@ class LinearClassifier(pl.LightningModule):
                 'scores': scores, 
                 'y': y
                 }
-    
 
     def validation_step(self, val_batch, batch_idx):
         loss, scores, y = self.step(val_batch, batch_idx)
@@ -72,7 +69,6 @@ class LinearClassifier(pl.LightningModule):
                 'y': y
                 }
 
-
     def test_step(self, test_batch, batch_idx):
         loss, scores, y = self.step(test_batch, batch_idx)
         _, pred = scores.max(1)
@@ -87,7 +83,6 @@ class LinearClassifier(pl.LightningModule):
                 'scores': scores, 
                 'y': y
                 }
-
 
     def configure_optimizers(self):
         optimizer_target = self.optimizer_config.pop('target')

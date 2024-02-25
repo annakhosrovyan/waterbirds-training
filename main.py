@@ -13,7 +13,7 @@ torch.set_float32_matmul_precision('medium')
 log = logging.getLogger(__name__)
 
 
-@hydra.main(version_base=None, config_path="conf", config_name="test")
+@hydra.main(version_base=None, config_path="conf", config_name="train")
 def main(cfg: DictConfig) -> None:
     from src import utils, train, test
     pl.seed_everything(cfg.seed, workers=True)

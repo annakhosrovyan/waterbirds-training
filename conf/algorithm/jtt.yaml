@@ -1,5 +1,0 @@
-_target_:  src.algorithm.JTT
-
-lambda_up: 10
-num_epochs: 3
-num_epochs_for_final_model: 10

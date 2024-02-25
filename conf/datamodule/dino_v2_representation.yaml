@@ -11,5 +11,4 @@ data_config:
   test_path: ${oc.env:DATA_ROOT}/dino_v2/test.npz
   val_path: ${oc.env:DATA_ROOT}/dino_v2/val.npz
 
-
-  
+  training_type: ${training_type.name}  

@@ -1,9 +1,7 @@
 .env
 .idea
-visualization.py 
 __pycache__
 /data
-/resnet50
 /wandb
 /outputs
 /lightning_logs

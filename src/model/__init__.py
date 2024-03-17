@@ -1,1 +1,2 @@
-from src.model.linear_classifier import LinearClassifier
+from src.model.erm import ERM
+from src.model.afr import AFR

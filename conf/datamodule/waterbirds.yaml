@@ -1,0 +1,9 @@
+data_config:
+  _target_:  src.datamodule.WaterBirdsDataModule
+  name: waterbirds
+  input_size: 224
+  num_classes: 2
+  training_type: ${training_type.name}  
+  root_dir: ${oc.env:ROOT_DIR}
+  batch_size: 32
+  num_workers: 0

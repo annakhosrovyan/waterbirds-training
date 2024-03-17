@@ -1,7 +1,13 @@
-target: torch.optim.lr_scheduler.ReduceLROnPlateau
+first_stage:
+  target: torch.optim.lr_scheduler.ReduceLROnPlateau
+  factor: 0.1
+  patience: 5
+  verbose: True
+  monitor: val_loss
 
-factor: 0.1
-patience: 5
-verbose: True
-
-monitor: train_loss
+second_stage:
+  target: torch.optim.lr_scheduler.ReduceLROnPlateau
+  factor: 0.1
+  patience: 5
+  verbose: True
+  monitor: val_loss

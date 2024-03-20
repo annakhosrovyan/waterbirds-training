@@ -1,0 +1,9 @@
+first_stage:
+  target: torch.optim.lr_scheduler.CosineAnnealingLR
+  T_max: ${first_stage_model.num_epochs} 
+  monitor: val_loss
+
+second_stage:
+  target: torch.optim.lr_scheduler.CosineAnnealingLR
+  T_max: ${second_stage_model.num_epochs} 
+  monitor: val_loss

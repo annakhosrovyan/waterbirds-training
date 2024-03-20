@@ -1,1 +1,1 @@
-from src.datamodule.encoding import EncodingDataModule
+from src.datamodule.encoding import WaterBirdsDataModule

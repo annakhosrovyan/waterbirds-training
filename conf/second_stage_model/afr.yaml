@@ -1,0 +1,8 @@
+_target_: src.model.AFR
+
+num_classes: ${datamodule.data_config.num_classes}  
+gamma: 4
+reg_AFR: 0.1
+num_epochs: 1
+weights_path: ${oc.env:WEIGHTS_DIR}/second_model.pth
+freeze_option: unfreeze_last   # options -> 'unfreeze_penultimate', 'unfreeze_last', or 'unfreeze_both'

@@ -1,8 +1,16 @@
 _target_: src.model.AFR
 
 num_classes: ${datamodule.data_config.num_classes}  
-gamma: 4
-reg_AFR: 0.1
-num_epochs: 1
-weights_path: ${oc.env:WEIGHTS_DIR}/second_model.pth
-freeze_option: unfreeze_last   # options -> 'unfreeze_penultimate', 'unfreeze_last', or 'unfreeze_both'
+gamma: 14.5
+reg_AFR: 0.8
+num_epochs: 50
+freeze_option: unfreeze_penultimate   # options -> 'unfreeze_penultimate', 'unfreeze_last', or 'unfreeze_both'
+
+checkpoints:
+  save:
+    _target_: pytorch_lightning.callbacks.ModelCheckpoint
+    dirpath: ${oc.env:CHECKPOINTS}/second_stage
+    save_last: True
+
+  load: 
+    path: ${oc.env:CHECKPOINTS}/second_stage/last.ckpt

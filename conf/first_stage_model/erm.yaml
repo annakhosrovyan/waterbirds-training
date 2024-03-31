@@ -1,5 +1,13 @@
 _target_: src.model.ERM
 
 num_classes: ${datamodule.data_config.num_classes}
-num_epochs: 1
-weights_path: ${oc.env:WEIGHTS_DIR}/first_model.pth
+num_epochs: 7
+
+checkpoints:
+  save:
+    _target_: pytorch_lightning.callbacks.ModelCheckpoint
+    dirpath: ${oc.env:CHECKPOINTS}/first_stage
+    save_last: True
+
+  load:
+    path: ${oc.env:CHECKPOINTS}/first_stage/last.ckpt

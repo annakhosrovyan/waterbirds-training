@@ -33,4 +33,5 @@ class CustomizedWaterbirdsDataset(WaterbirdsDataset):
             return x, y, c
         else:
             w = self.weights[idx]
+            # print(w, c)
             return x, y, w

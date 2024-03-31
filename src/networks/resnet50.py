@@ -9,19 +9,20 @@ class ResNet50(nn.Module):
         self.model = models.resnet50(pretrained=pretrained)
         self.model.fc = nn.Linear(self.model.fc.in_features, num_classes)
 
+        self._last_layer = 'fc'
+        self._penultimate_layer = 'layer4'
 
     def forward(self, x):
         return self.model(x)
 
-
-    def freeze_layers(self, freeze_option):
+    def freeze_layers(self, freeze_option: str) -> None:
         unfreeze_layers = []
         if freeze_option == "unfreeze_penultimate":
-            unfreeze_layers.append("layer4")
+            unfreeze_layers.append(self._penultimate_layer)
         elif freeze_option == "unfreeze_last":
-            unfreeze_layers.append("fc")
+            unfreeze_layers.append(self._last_layer)
         elif freeze_option == "unfreeze_both":
-            unfreeze_layers.extend(["layer4", "fc"])
+            unfreeze_layers.extend([self._penultimate_layer, self._last_layer])
 
         for name, param in self.model.named_parameters():
             param.requires_grad = False 

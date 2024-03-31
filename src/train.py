@@ -5,8 +5,9 @@ from omegaconf import DictConfig
 from hydra.utils import instantiate
 from src.utils import PrintingCallback
 from pytorch_lightning.loggers import WandbLogger
+from pytorch_lightning.callbacks import EarlyStopping
 
-wandb_logger = WandbLogger(log_model=False, project='waterbirds_training')
+wandb_logger = WandbLogger(log_model=False, project='31_03_24')
 
 
 def train(cfg: DictConfig) -> None:
@@ -15,7 +16,10 @@ def train(cfg: DictConfig) -> None:
 
     datamodule = instantiate(cfg.datamodule.data_config)
     network = instantiate(cfg.networks)
-    
+            
+    first_checkpoint = instantiate(cfg.first_stage_model.checkpoints.save)
+    second_checkpoint = instantiate(cfg.second_stage_model.checkpoints.save)
+
     first_stage_model = instantiate(cfg.first_stage_model,
                                     network=network,
                                     loss_fn=cfg.loss,
@@ -26,12 +30,11 @@ def train(cfg: DictConfig) -> None:
     first_stage_trainer = pl.Trainer(max_epochs=cfg.first_stage_model.num_epochs,
                                     accelerator=device,
                                     deterministic=True,
-                                    callbacks=PrintingCallback(),
-                                    # logger=wandb_logger
+                                    callbacks=[PrintingCallback(), first_checkpoint],
+                                    logger=wandb_logger
                                     )
     first_stage_trainer.fit(model=first_stage_model, datamodule=datamodule)
     first_stage_trainer.validate(model=first_stage_model, datamodule=datamodule)
-    torch.save(first_stage_model.state_dict(), cfg.first_stage_model.weights_path)
     first_stage_trainer.test(model=first_stage_model, datamodule=datamodule)
 
 
@@ -40,18 +43,17 @@ def train(cfg: DictConfig) -> None:
         network.freeze_layers(cfg.second_stage_model.freeze_option)
 
         second_stage_model = instantiate(cfg.second_stage_model,
-                                        loss_fn=cfg.loss,
                                         network=network,
                                         optimizer_config=cfg.optimizer.second_stage,
                                         scheduler_config=cfg.scheduler.second_stage
                                         ).to(device)
-
+        
+        early_stop_callback = EarlyStopping(monitor="val_wga",patience=10, check_on_train_epoch_end=True)
         second_stage_trainer = pl.Trainer(max_epochs=cfg.second_stage_model.num_epochs, 
                                         accelerator=device,
                                         deterministic=True,
-                                        callbacks=PrintingCallback(),
+                                        callbacks=[PrintingCallback(), second_checkpoint, early_stop_callback],
                                         logger=wandb_logger)
         second_stage_trainer.fit(model=second_stage_model, datamodule=datamodule)
-        torch.save(second_stage_model.state_dict(), cfg.second_stage_model.weights_path)
         second_stage_trainer.validate(model=second_stage_model, datamodule=datamodule)
         second_stage_trainer.test(model=second_stage_model, datamodule=datamodule)

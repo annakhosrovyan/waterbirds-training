@@ -79,7 +79,6 @@ class WaterBirdsDataModule(pl.LightningDataModule):
         WaterbirdsDataset.weights = {self._train_rw_data.indices[i]: weights[i] for i in
                                      range(len(self._train_rw_data))}
 
-
     def setup(self, *args, **kwargs):
         dataset = WaterbirdsDataset(root_dir=self._root_dir, download=True)
 

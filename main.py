@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 from omegaconf import DictConfig
 
 load_dotenv('.env')
-torch.set_float32_matmul_precision('medium')
 
 log = logging.getLogger(__name__)
 

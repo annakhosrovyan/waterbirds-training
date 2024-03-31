@@ -1,1 +1,1 @@
-from src.datamodule.dataset.encoding import CustomizedWaterbirdsDataset
+from src.datamodule.dataset.waterbirds import CustomizedWaterbirdsDataset
